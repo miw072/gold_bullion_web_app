@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "UTF-8">
+	<title> Forms </title>
+</head>
+
+<body>
+
+    <form action="form_test.asp">
+        First name: <input type="text" name="FirstName" value="Richard"><br>
+        Last name: <input type="text" name="LastName" value="Wang"><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <form>
+        <input type="date" name="Date">
+        <input type="datetime" name="Datetime">
+    </form>
+
+    <form>
+        <input type="color" name="Color">
+    </form><br>
+    
+    <p>
+        Note that IE does not support some tags.
+    </p>
+
+    <hr>
+
+    <form action="demo_form.asp">
+        <label for="male">Male</label>
+        <input type="radio" name="sex" id="male" value="male"><br>
+        <label for="female">Female</label>
+        <input type="radio" name="sex" id="female" value="female"><br>
+    </form>
+
+    <hr>
+
+    <button type="button" onclick="alert('Hello world!')">Test Button!</button>
+
+    <hr>
+
+    <select>
+        <option value="Akita">Akita</option>
+        <option value="Beagle">Beagle</option>
+        <option value="Cannan Dog">Cannan Dog</option>
+        <option value="Harrier">Harrier</option>
+    </select>
+
+    <hr>
+
+    <form>
+        <input list="browsers" name="browser">
+        <datalist id="browsers">
+            <option value="Internet Explorer">IE</option>
+            <option value="Firefox">Firefox</option>
+            <option value="Chrome">Chrome</option>
+            <option value="Opera">Opera</option>
+            <option value="Safari">Safari</option>
+        </datalist>
+    </form>
+
+    <hr>
+
+    <select>
+        <optgroup label="cseclass">
+            <option value="cse134b">cse134b</option>
+            <option value="cse135">cse135</option>
+        </optgroup>
+        
+        <optgroup label="ececlass">
+            <option value="ece134b">ece134b</option>
+            <option value="ece135">ece135</option>
+        </optgroup>
+    </select>
+
+    <hr>
+
+    <form action="demo_keygen.asp" method="get">
+        Username: <input type="text" name="usr_name">
+        Encryption: <keygen name="security">
+    </form>
+
+    <hr>
+
+    <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
+        <input type="range" id="a" value="50">100
+        +<input type="number" id="b" value="50">
+        =<output name="x" for="a b"></output>
+    </form>
+
+    <hr>
+
+    Dogging progress:
+    <progress value="47" max="100">
+    </progress>
+
+    <hr>
+
+    <p>Display a gauge:</p>
+    <meter value="5" min="0" max="10">5 out of 10</meter><br>
+    <meter value="0.3">30%</meter>
+
+    <br>
+
+    <form>
+        <fieldset>
+            <legend>Dog:</legend>
+            Name: <input type="text"><br>
+            Age: <input type="text"><br>
+            Gender: <input type="text">
+        </fieldset>
+    </form>
+
+    <br>
+
+    <textarea rows="4" cols="50">
+        This is Sundogs Page!
+    </textarea>
+
+
+
+</body>

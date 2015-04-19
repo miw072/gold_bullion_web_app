@@ -6,6 +6,37 @@
 </head>
 
 <body>
+	<p>input tag: type is "data", "datetime", "time" etc. is not supported in IE</p>
+	<form>
+        <input type="date" name="Date">
+        <input type="datetime" name="Datetime">
+    </form>
+    <hr>
 	
+	<p>input tag: type is "color" is not supported in IE</p>
+    <form>
+        <input type="color" name="Color">
+    </form>
+    <hr>
+
+	<p>keygen tag: is not supported in IE</p>
+	<form action="demo_keygen.asp" method="get">
+        Username: <input type="text" name="usr_name">
+        Encryption: <keygen name="security">
+    </form>
+	<hr>
+
+	<p>output tag: is not supported in IE</p>
+	<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
+        <input type="range" id="a" value="50">100
+        +<input type="number" id="b" value="50">
+        =<output name="x" for="a b"></output>
+    </form>
+	<hr>
+	
+	<p>meter tag: is not supported in IE</p>
+    <meter value="5" min="0" max="10">5 out of 10</meter><br>
+    <meter value="0.3">30%</meter>
+
 </body>
 </html>
