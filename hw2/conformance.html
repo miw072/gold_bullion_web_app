@@ -13,14 +13,14 @@
 </head>
 
 <body>
-	<p>input tag: type is "data", "datetime", "time" etc. is not supported in IE and FireFox</p>
+	<p>input tag: type is "data", "datetime", "time" etc. is not supported in IE, FireFox and Safari</p>
 	<form>
         <input type="date" name="Date">
         <input type="datetime" name="Datetime">
     </form>
     <hr>
 	
-	<p>input tag: type is "color" is not supported in IE</p>
+	<p>input tag: type is "color" is not supported in IE and Safari</p>
     <form>
         <input type="color" name="Color">
     </form>
@@ -44,7 +44,7 @@
 	<p>meter tag: is not supported in IE</p>
     <meter value="5" min="0" max="10">5 out of 10</meter><br>
     <meter value="0.3">30%</meter>
-
+<hr>
     <p>template tag: is not supported in IE</p>
         <table>
             <thead>
@@ -68,7 +68,7 @@
         template.parentNode.appendChild(clone);
         }
     </script>
-
+<hr>
     <p>canvas tag: is not supported in IE</p>
     <canvas id="myCanvas"></canvas>
 
