@@ -38,7 +38,40 @@
     <meter value="5" min="0" max="10">5 out of 10</meter><br>
     <meter value="0.3">30%</meter>
 
-<br>
+    <p>template tag: is not supported in IE</p>
+        <table>
+            <thead>
+            <tr>
+            <th>Name</th> <th>Color</th> <th>Sex</th> <th>Legs</th>
+            <tbody>
+            <template id="row">
+            <tr><td></td><td></td><td></td><td></td></tr>
+            </template>
+        </table>
+    <script>
+        var template = document.querySelector('#row');
+        for (var i = 0; i < data.length; i += 1) {
+        var cat = data[i];
+        var clone = template.content.cloneNode(true);
+        var cells = clone.querySelectorAll('td');
+        cells[0].textContent = cat.name;
+        cells[1].textContent = cat.color;
+        cells[2].textContent = cat.sex;
+        cells[3].textContent = cat.legs;
+        template.parentNode.appendChild(clone);
+        }
+    </script>
+
+    <p>canvas tag: is not supported in IE</p>
+    <canvas id="myCanvas"></canvas>
+
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        ctx.fillStyle = "#FF0000";
+        ctx.fillRect(0, 0, 80, 80);
+    </script>
+    <br>
 	<a href="index.html"> Home Page</a>
 </body>
 </html>
