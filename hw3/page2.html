@@ -14,11 +14,21 @@
 	body {
 		font: normal 100% Helvetica, Arial, sans-serif;
 	}
+	.nav-tabs > li {
+    	float:none;
+    	display:inline-block;
+    	*display:inline; /* ie7 fix */
+     	zoom:1; /* hasLayout ie7 trigger */
+	}
+	
+	.nav-tabs{
+    	text-align:center;
+	}	
 	</style>
 </head>
 
 <body>
-	<div class = "topbar">
+	<nav class = "topbar">
 		<div class = "container">
 			<div class = "row">
 				<div class = "col-xs-12 col-md-12">
@@ -34,7 +44,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</nav>
 
 	<div class="clearfix" style="margin-bottom: 1em;"></div>
 
@@ -63,10 +73,10 @@
 			<div class = "col-xs-11 col-md-4">
 				<div class = "row" style = "background-color: lightgrey; width: 100%; margin-left: 2%;">
 					<p style = "font-size: 3em;">
-						<b>&nbsp$20000.00</b><b style = "font-size: 0.5em; color: grey;">+3.5%</b>
+						<b>&nbsp;$20000.00</b><b style = "font-size: 0.5em; color: grey;">+3.5%</b>
 					</p>
 					<p style = "font-size: 1em; margin-top: -1em;">
-						&nbsp&nbsp&nbspMy Total Stack  Value
+						&nbsp;&nbsp;&nbsp;My Total Stack  Value
 					</p>
 				</div>
 
@@ -77,83 +87,105 @@
 					<div align = "right" style = "font-size: 1 em;color: grey; margin-top : -1.55em;"><i>Closes in 3h 35min</i></div>	
 				</div>
 				<div class="clearfix" style="margin-bottom: 1em;"></div>
-				<div class="row text-center">
-					<button type="button" class="btn btn-primary btn-xs hidden-md" data-toggle="collapse" data-parent="#tableandgraph"data-target="#datatable" >1</button>
-					<button type="button" class="btn btn-primary btn-xs hidden-md" data-toggle="collapse" data-parent="#tableandgraph"data-target="#graph">2</button>
-				</div>
 
-				<div id ='datatable' class = "row collapse in" style="margin-top: 1em; width: 100%;">
-					<ul>
-						<li>
-							<div style = "font-size: 1.5em;">Gold</div>
-							<div align = "right">
-								<a href="#">
-									<span class="glyphicon glyphicon-play" style = "float: right; font-size: 1em; margin-top: -1.55em;"></span>
-								</a>
-							</div>	
-							<table class = "table table-bordered">
-							  <tr>
-							    <th>1206.10</th>
-							    <th>1207.10</th>
-							    <th>+23.40</th>
-							  </tr>
-							  <tr>
-							    <th>Bid</th>
-							    <th>Ask</th>
-							    <th>Change</th>
-							  </tr>
-							</table>
-						</li>
-						<li>
-							<div style = "font-size: 1.5em;">Silver</div>
-							<div align = "right">
-								<a href="#">
-									<span class="glyphicon glyphicon-play" style = "float: right; font-size: 1em; margin-top: -1.55em;"></span>
-								</a>
-							</div>	
-							<table class = "table table-bordered">
-							  <tr>
-							    <th>16.10</th>
-							    <th>16.50</th>
-							    <th>-.36</th>
-							  </tr>
-							  <tr>
-							    <th>Bid</th>
-							    <th>Ask</th>
-							    <th>Change</th>
-							  </tr>
-							</table>
-						</li>
-						<li>
-							<div style = "font-size: 1.5em;">Platinum</div>
-							<div align = "right">
-								<a href="#">
-									<span class="glyphicon glyphicon-play" style = "float: right; font-size: 1em; margin-top: -1.55em;"></span>
-								</a>
-							</div>	
-							<table class = "table table-bordered">
-							  <tr>
-							    <th>1206.10</th>
-							    <th>1207.10</th>
-							    <th>+23.40</th>
-							  </tr>
-							  <tr>
-							    <th>Bid</th>
-							    <th>Ask</th>
-							    <th>Change</th>
-							  </tr>
-							</table>
-						</li>
-					</ul>
-				</div>
+					<ul class="nav nav-tabs hidden-md hidden-lg" style="font-size: 2em;">
+	   					<li class="active">
+	   						<a data-toggle="tab" href="#datatable">
+								<span class="glyphicon glyphicon-list"></span>
+	   						</a>
+	   					</li>
+	    				<li><a data-toggle="tab" href="#graph">
+	    						<span class="glyphicon glyphicon-stats"></span>
+	    					</a>
+	    				</li>
+	  				</ul>
+	  				<div class="tab-content">
+	  					<div id ='datatable' class="tab-pane fade in active">
+							<div class = "row " style="margin-top: 1em; width: 100%;">
+								<ul>
+									<li>
+										<div style = "font-size: 1.5em;">Gold</div>
+										<div align = "right">
+											<a href="#">
+												<span class="glyphicon glyphicon-play" style = "float: right; font-size: 1em; margin-top: -1.55em;"></span>
+											</a>
+										</div>	
+										<table class = "table table-bordered">
+										  <tr>
+										    <th>1206.10</th>
+										    <th>1207.10</th>
+										    <th>+23.40</th>
+										  </tr>
+										  <tr>
+										    <th>Bid</th>
+										    <th>Ask</th>
+										    <th>Change</th>
+										  </tr>
+										</table>
+									</li>
+									<li>
+										<div style = "font-size: 1.5em;">Silver</div>
+										<div align = "right">
+											<a href="#">
+												<span class="glyphicon glyphicon-play" style = "float: right; font-size: 1em; margin-top: -1.55em;"></span>
+											</a>
+										</div>	
+										<table class = "table table-bordered">
+										  <tr>
+										    <th>16.10</th>
+										    <th>16.50</th>
+										    <th>-.36</th>
+										  </tr>
+										  <tr>
+										    <th>Bid</th>
+										    <th>Ask</th>
+										    <th>Change</th>
+										  </tr>
+										</table>
+									</li>
+									<li>
+										<div style = "font-size: 1.5em;">Platinum</div>
+										<div align = "right">
+											<a href="#">
+												<span class="glyphicon glyphicon-play" style = "float: right; font-size: 1em; margin-top: -1.55em;"></span>
+											</a>
+										</div>	
+										<table class = "table table-bordered">
+										  <tr>
+										    <th>1206.10</th>
+										    <th>1207.10</th>
+										    <th>+23.40</th>
+										  </tr>
+										  <tr>
+										    <th>Bid</th>
+										    <th>Ask</th>
+										    <th>Change</th>
+										  </tr>
+										</table>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div id = "graph" class="tab-pane fade hidden-md hidden-lg">
+							<div class = "col-xs-12">
+								<img src = "page2_mobile.png" style = "width:130%;margin-left: -4%">
+							</div>
+						</div>	
+					</div>
 			</div>
 
-			<div id = 'graph' class = "col-xs-12 col-md-6 collapse in">
+			<div class = "col-xs-12 col-md-6 collapse in hidden-xs hidden-sm">
 				<img src = "page2.png" style = "width:100%;">
 			</div>
 			
 		</div>
 	</div>
-
+	<div class="container">
+		<div class="row">
+			<div class="page-header" style="height: 50px;background-color: lightgrey;">
+				<p class="text-center" style="padding-top:10px;padding-bottom:10px;">&copy MyStackApp by Sundogs</p>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
