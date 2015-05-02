@@ -11,10 +11,13 @@
   <![endif]-->
     <style>
 	    p {
-		    line-height: 1.6;
+		    line-height: 1.7;
 	    }
 	    body {
   		  font: normal 100% Helvetica, Arial, sans-serif;
+  	  }
+  	  select {
+    	  width: 11.7em;
   	  }
 	</style>
 </head>
@@ -39,8 +42,8 @@
 
 	<div class="clearfix" style="margin-bottom: 1em;"></div>
 
-	<div class="container-fluid">
-  	<div class="row-fluid">
+	<div class="container">
+  	<div class="row">
     	
     	<div class = "col-xs-0 col-sm-2 col-md-2 col-lg-2 hidden-xs">
   		  <ul class="nav nav-pills nav-stacked">
@@ -62,62 +65,69 @@
   	    </ul>
   		</div>
   		
-      <div class="col-xs-4 col-sm-2 col-md-2 col-lg-2" style="font-size: 1.5em">
+      <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2" style="font-size: 1.5em">
   			<a href="#" class="text-left">
   				<span class="glyphicon glyphicon-chevron-left"></span>
         </a>
-  			<span>Item Detail</span>
+  			<span>Add Item</span>
   			<div class="clearfix" style="margin-bottom: 1em;"></div>
-        <img class="img-responsive" src="../hw2/tests/img/lyc.jpeg" alt="the pic"/>
+        <img class="img-responsive center-block" src="page4.png" alt="the pic" width="150"/>
   		</div>
-  		<div class="col-xs-4 col-sm-2 col-md-2 col-lg-2 text-right" style="font-size: 1.2em;">
-  			<p>Metal</p>
-  			<p>Type</p>
-  			<p>Purchase Date</p>
-  			<p>Qty.</p>
-  			<p>Premium</p>
-  			<p>Unit Price</p>
-  			<p>Gold %</p>
-  			<p>Weight/unit(g)</p>
-  			<p>Gold g/u</p>
-  			<p>Gold ozt/u</p>
-  			<p>Total au(ozt)</p>
-  			<p><Strong>Total</Strong></p>
-  		</div>
-  		<div class="col-xs-4 col-sm-2 col-md-2 col-lg-2 text-left" style="font-size: 1.2em;">
-  			<p>
-  				<select>
-  					<option>Gold</option>
-  					<option>Silver</option>
-  				</select>
-  			</p>
-  			<p>
-  				<select>
-  					<option>US Eagle</option>
-  					<option>US Dog</option>
-  				</select>
-  			</p>
-  			<p>
-  				<select>
-  					<option>US Eagle</option>
-  					<option>US Dog</option>
-  				</select>
-  			</p>
-  			<p style="line-height: 1;">
-  				<input type="text" value="1"/>
-  			</p>
-  			<p style="line-height: 1;">
-  				<input type="text"/>
-  			</p>
-  			<p style="line-height: 1;">
-  				<input type="text"/>
-  			</p>
-  			<p>0.999</p>
-  			<p>1.244</p>
-  			<p>1.244</p>
-  			<p>0.0400</p>
-  			<p>0.0400</p>
-  			<p>1199.10</p>		
+  		<div class="row col-xs-12 col-sm-6 col-md-4 col-lg-4 center-block">
+    		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-right" style="font-size: 1.2em;">
+    			<p>Metal</p>
+    			<p>Type</p>
+    			<p>Purchase Date</p>
+    			<p>Qty.</p>
+    			<p>Premium</p>
+    			<p>Unit Price</p>
+    			<p>Gold %</p>
+    			<p>Weight/unit(g)</p>
+    			<p>Gold g/u</p>
+    			<p>Gold ozt/u</p>
+    			<p>Total au(ozt)</p>
+    			<p><Strong>Total</Strong></p>
+    		</div>
+    		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-left" style="font-size: 1.2em;">
+    			<p>
+    				<select>
+    					<option>Gold</option>
+    					<option>Silver</option>
+    				</select>
+    			</p>
+    			<p>
+    				<select>
+    					<option>US Eagle</option>
+    					<option>US Dog</option>
+    				</select>
+    			</p>
+    			<p>
+    				<select>
+    					<option>US Eagle</option>
+    					<option>US Dog</option>
+    				</select>
+    			</p>
+    			<p style="line-height: 1;">
+    				<input type="text" value="1"/>
+    			</p>
+    			<p style="line-height: 1;">
+    				<input type="text"/>
+    			</p>
+    			<p style="line-height: 1;">
+    				<input type="text"/>
+    			</p>
+    			<p>0.999</p>
+    			<p>1.244</p>
+    			<p>1.244</p>
+    			<p>0.0400</p>
+    			<p>0.0400</p>
+    			<p>1199.10</p>		
+    		</div>
+    		<div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12 center-block">
+    		  <a href="#" class="btn btn-default btn-lg btn-block" role="button" style="background-color: grey;color: white">
+  					Save to MyStack
+          </a>
+    		</div>
   		</div>
 		</div>
 	</div>
