@@ -26,16 +26,27 @@
 	}	
 	</style>
 </head>
-<body style ="padding-top: 100px;padding-bottom: 7%;">
-	<nav class = "topbar navbar-fixed-top" >
+<body>
+	<nav class = "topbar" >
 		<div class = "container">
 			<div class = "row"> 	
 					<div class = "page-header" style = "height: 4em; background-color: lightgrey;">
-							<a href="#">
+							<a class = "hidden-xs hidden-sm" href="#">
 								<span class="glyphicon glyphicon-refresh" style = "float: left; font-size: 3.0em; margin-top: 0.25em; margin-left: 0.3em;"></span>
 							</a>
+<<<<<<< HEAD
 							<span style = "font-size: 3em;">&nbsp MyStackApp</span>
 							<a href="#">
+=======
+							<a class = "hidden-md hidden-lg" href="#">
+								<span class="glyphicon glyphicon-chevron-left" style = "float: left; font-size: 3.0em; margin-top: 0.25em; margin-right: 0.3em;"></span>
+							</a>
+							<span style = "font-size: 3em; float: left;margin-top: 0.2em;">&nbsp MyStack</span>
+							<a class = "hidden-md hidden-lg" href="#">
+								<span class="glyphicon glyphicon-plus" style = "float: right; font-size: 3.0em; margin-top: 0.25em; margin-right: 0.3em;"></span>
+							</a>
+							<a class = "hidden-xs hidden-sm" href="#">
+>>>>>>> fbfe9fe0728f2c965dacd53da7b04e303befdca0
 								<span class="glyphicon glyphicon-cog" style = "float: right; font-size: 3.0em; margin-top: 0.25em; margin-right: 0.3em;"></span>
 							</a>
 					</div>
@@ -47,7 +58,7 @@
 
 	<div id = "tableandgraph" class = "container" >
 		<div class = "row" style = "width: 100%;">
-			<div class = "col-md-2 hidden-xs">
+			<div class = "col-xs-0 col-md-2 hidden-xs hidden-sm">
 				<ul class="nav nav-pills nav-stacked">
 	        		<li >
 	        			<a href="#">
@@ -67,23 +78,28 @@
 	      		</ul>
 			</div>
 			
-			<div class = "col-xs-11 col-md-4">
+			<div class = "col-xs-12 col-md-4">
 				<div class = "row" style = "background-color: lightgrey; width: 100%; margin-left: 2%;">
-					<p style = "font-size: 3em;">
-						<b>&nbsp;$20000.00</b><b style = "font-size: 0.5em; color: grey;">+3.5%</b>
+					<p style = "font-size: 3.5em;">
+						<b>&nbsp;$20000.00</b><b style = "float:right;font-size: 0.5em; color: grey;">Daily:+3.5%</b>
+						<br>
+						<b style = "float:right;font-size: 0.5em; color: grey;">Overall:+1.2%</b>
 					</p>
-					<p style = "font-size: 1em; margin-top: -1em;">
+					<p style = "font-size: 1em; margin-top: -0.5em;">
 						&nbsp;&nbsp;&nbsp;My Total Stack  Value
 					</p>
 				</div>
 
 				<div class="clearfix" style="margin-bottom: 1em;"></div>
 
+<<<<<<< HEAD
 				<div class = "row" style = "width: 100%; margin-left: 2%;">
 					<div style = "font-size: 1.5em;">Market is <b style = "color: grey;">open</b></div>
 					<div align = "right" style = "font-size: 1 em;color: grey; margin-top : -1.55em;"><i>Closes in 3h 35min</i></div>	
 				</div>
 
+=======
+>>>>>>> fbfe9fe0728f2c965dacd53da7b04e303befdca0
 				<div class="clearfix" style="margin-bottom: 1em;"></div>
 
 					<ul class="nav nav-tabs hidden-md hidden-lg" style="font-size: 2em;">
@@ -102,62 +118,71 @@
 							<div class = "row " style="margin-top: 1em; width: 100%;">
 								<ul>
 									<li>
-										<div style = "font-size: 1.5em;">Gold</div>
+										<div style = "font-size: 1.5em;"><b>Gold</b></div>
 										<div align = "right">
+											My Gold Value <b style = "font-size: 1.5em;">18234.10</b>
 											<a href="#">
-												<span class="glyphicon glyphicon-play" style = "float: right; font-size: 1em; margin-top: -1.55em;"></span>
+												<span class="glyphicon glyphicon-play" style = "font-size: 1em; margin-top: -1.55em;"></span>
 											</a>
 										</div>	
-										<table class = "table table-bordered">
+										<table class = "table">
 										  <tr>
-										    <th>1206.10</th>
-										    <th>1207.10</th>
+										    <th>1199.10</th>
+										    <th>21.02</th>
 										    <th>+23.40</th>
+										    <th>+16.40</th>
 										  </tr>
 										  <tr>
-										    <th>Bid</th>
-										    <th>Ask</th>
-										    <th>Change</th>
+										    <td>spot price</td>
+										    <td>total ounces</td>
+										    <td>Daily</td>
+										    <td>Overall</td>
 										  </tr>
 										</table>
 									</li>
 									<li>
-										<div style = "font-size: 1.5em;">Silver</div>
+										<div style = "font-size: 1.5em;"><b>Silver</b></div>
 										<div align = "right">
+											My Siver Value <b style = "font-size: 1.5em;">6261.10</b>
 											<a href="#">
-												<span class="glyphicon glyphicon-play" style = "float: right; font-size: 1em; margin-top: -1.55em;"></span>
+												<span class="glyphicon glyphicon-play" style = "font-size: 1em; margin-top: -1.55em;"></span>
 											</a>
 										</div>	
-										<table class = "table table-bordered">
+										<table class = "table">
 										  <tr>
-										    <th>16.10</th>
-										    <th>16.50</th>
-										    <th>-.36</th>
+										    <th>1191.10</th>
+										    <th>20.50</th>
+										    <th>+5.40</th>
+										    <th>+4.40</th>
 										  </tr>
 										  <tr>
-										    <th>Bid</th>
-										    <th>Ask</th>
-										    <th>Change</th>
+										    <td>spot price</td>
+										    <td>total ounces</td>
+										    <td>Daily</td>
+										    <td>Overall</td>
 										  </tr>
 										</table>
 									</li>
 									<li>
-										<div style = "font-size: 1.5em;">Platinum</div>
+										<div style = "font-size: 1.5em;"><b>Platinum</b></div>
 										<div align = "right">
+											My Platinum Value <b style = "font-size: 1.5em;">0.00</b>
 											<a href="#">
-												<span class="glyphicon glyphicon-play" style = "float: right; font-size: 1em; margin-top: -1.55em;"></span>
+												<span class="glyphicon glyphicon-play" style = "font-size: 1em; margin-top: -1.55em;"></span>
 											</a>
 										</div>	
-										<table class = "table table-bordered">
+										<table class = "table">
 										  <tr>
-										    <th>1206.10</th>
-										    <th>1207.10</th>
-										    <th>+23.40</th>
+										    <th>1191.10</th>
+										    <th>0</th>
+										    <th>-</th>
+										    <th>-</th>
 										  </tr>
 										  <tr>
-										    <th>Bid</th>
-										    <th>Ask</th>
-										    <th>Change</th>
+										    <td>spot price</td>
+										    <td>total ounces</td>
+										    <td>Daily</td>
+										    <td>Overall</td>
 										  </tr>
 										</table>
 									</li>
@@ -166,7 +191,7 @@
 						</div>
 						<div id = "graph" class="tab-pane fade hidden-md hidden-lg">
 							<div class = "col-xs-12">
-								<img src = "page2_mobile.png" style = "width:130%;margin-left: -4%">
+								<img src = "page2_mobile.png" style = "width:110%;">
 							</div>
 						</div>	
 					</div>
@@ -178,7 +203,7 @@
 			
 		</div>
 	</div>
-	<nav class = "topbar navbar-fixed-bottom" >
+	<nav class = "topbar hidden-xs hidden-sm"" >
 		<div class="container">
 			<div class="row">
 				<div class="page-header" style="height: 50px;background-color: lightgrey;">
