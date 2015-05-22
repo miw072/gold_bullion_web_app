@@ -1,0 +1,1052 @@
+@import "bourbon/bourbon";
+
+/* * * * * * * * * * * * * * * *
+ *                             *
+ *           FONTS             *
+ *                             *
+ * * * * * * * * * * * * * * * */
+ @include font-face("robotolight", "../fonts/Roboto-Light", $file-formats: ttf eot);
+ @include font-face("robotocon", "../fonts/RobotoCondensed-Regular", $file-formats: ttf eot);
+ @include font-face("openlight", "../fonts/OpenSans-Light", $file-formats: ttf eot);
+ @include font-face("openregular", "../fonts/OpenSans-Regular", $file-formats: ttf eot);
+ @include font-face("opensemi", "../fonts/OpenSans-Semibold", $file-formats: ttf eot);
+ @include font-face("raleway_r", "../fonts/Raleway-Regular", $file-formats: ttf eot);
+ @include font-face("raleway_m", "../fonts/Raleway-Medium", $file-formats: ttf eot);
+ @include font-face("monster_h", "../fonts/montserrat-hairline-webfont", $file-formats: ttf eot);
+ @include font-face("monster_l", "../fonts/montserrat-light-webfont", $file-formats: ttf eot);
+ @include font-face("monster_r", "../fonts/montserrat-regular-webfont", $file-formats: ttf eot);
+
+
+
+
+ /* SASS VARIABLES */
+ $main-background: #1D1D1D;
+ $main-font: #E6E6E6;
+
+ $nav-background: #272E32;
+ $seperator-color: #1D1D1D;
+
+
+ $main-accent: #68CEDE;
+ $darker-accent: #55B7C5;
+ $main-accent-hover: #77EDFF;
+ $gray-text: #B1B1B1;
+
+ $nav-border-rad: 0px;
+
+ $positive-color: #A7FF8B;
+ $negative-color: #FF6A65;
+ $input-bg-color: #4c4c4c;
+
+ $graph-red: #FF6D67;
+ $graph-orange: #FFA859;
+ $graph-yellow: #F3FF88;
+ $graph-green: #9FFF98;
+ $graph-blue: #BBF5FF;
+ $graph-purple: #C29FFF;
+
+/* * * * * * * * * * * * * * * *
+ *                             *
+ *        GENERAL STYLE        *
+ *                             *
+ * * * * * * * * * * * * * * * */
+ * {
+ 	margin: 0;
+ 	padding: 0;
+ }
+
+ html, body {
+ 	height: 100%;
+ 	width: 100%;
+ 	font-size: 14px;
+ }
+
+ body {
+ 	background: $main-background;
+ 	font-family: "monster_h", sans-serif;
+ 	font-weight: 600;
+ 	color: $main-font;
+ }
+
+ .main-section{
+ 	@include box-sizing(border-box);
+ 	padding-top: 63px;
+ 	padding-bottom: 33px;
+ 	padding-left: 103px;
+ }
+
+
+/* * * * * * * * * * * * * * * *
+ *                             *
+ *     NAVIGATION & FOOTER     *
+ *                             *
+ * * * * * * * * * * * * * * * */
+
+ /* TOP NAV */
+ nav{
+ 	position: fixed;
+ 	top: 0;
+ 	width: 100%;
+ 	height: 60px;
+ 	line-height: 60px;
+ 	background: $nav-background;
+ 	font-size: 1.5em;
+ 	@include box-sizing(border-box);
+ 	padding-left: 0px;
+ 	text-align: center;
+ 	font-weight: 700;
+ 	color: #fafafa;
+ 	border-bottom-left-radius: $nav-border-rad;
+ 	border-bottom-right-radius: $nav-border-rad;
+ 	box-shadow: 0px 2px 5px $main-background;
+ 	z-index: 999;
+
+ 	svg{
+ 		width: 30px;
+ 		height: 30px;
+ 		fill: $darker-accent;
+ 		position: absolute;
+ 		top: 50%;
+ 		margin-top: -15px;
+ 		cursor: pointer;
+ 		@include transition(all .1s ease-out);
+
+ 		&:hover{
+ 			fill: $main-accent-hover;
+ 			@include transform(scale(1.05));
+ 		}
+ 	}
+
+
+ 	.icon-spinner2{
+ 		left: 35px;
+ 	}
+
+ 	.icon-cog{
+ 		right: 35px;
+ 	}
+
+ 	a{
+ 		text-decoration: none;
+ 		color: $main-font;
+ 	}
+ }
+
+
+
+
+ .mobile-nav{
+ 	position: fixed;
+ 	top: 0;
+ 	left: 0;
+ 	width: 100%;
+ 	height: 60px;
+ 	line-height: 60px;
+ 	background: $nav-background;
+ 	font-size: 1.5em;
+ 	@include box-sizing(border-box);
+ 	padding-left: 0px;
+ 	text-align: center;
+ 	font-weight: 700;
+ 	color: #fafafa;
+ 	border-bottom-left-radius: $nav-border-rad;
+ 	border-bottom-right-radius: $nav-border-rad;
+ 	box-shadow: 0px 2px 5px $main-background;
+ 	z-index: 999;
+ 	display: none;
+
+ 	svg{
+ 		display: block;
+ 		width: 40px;
+ 		height: 40px;
+ 		fill: $darker-accent;
+ 		position: absolute;
+ 		top: 50%;
+ 		margin-top: -20px;
+ 		cursor: pointer;
+ 		@include transition(all .1s ease-out);
+
+ 		&:hover{
+ 			fill: $main-accent-hover;
+ 			@include transform(scale(1.05));
+ 		}
+ 	}
+
+ 	.icon-keyboard-arrow-left{
+ 		left: 20px;
+ 	}
+
+ 	.icon-add{
+ 		right: 20px;
+ 	}
+ }
+
+
+
+/* SIDE NAV */
+aside{
+	position: fixed;
+	top: 63px;
+	left: 0;
+	//height: 100%;
+	@include calc(height, "100% - 96px");
+	width: 100px;
+	background: $nav-background;
+	border-radius: $nav-border-rad;
+
+	a{
+		text-decoration: none;
+	}
+}
+
+aside figure{
+	width: 100%;
+	height: 100px;
+	border-bottom: 3px solid $seperator-color;
+	cursor: pointer;
+	color: $darker-accent;
+	text-align: center;
+	line-height: 80px;
+	font-size: 2.5em;
+	position: relative;
+	@include transition(all .1s ease-out);
+
+
+	figcaption{
+		font-size: 14px;
+		position: relative;
+		top: -42px;
+		font-family: "monster_h", sans-serif;
+		color: $gray-text;
+	}
+
+	svg{
+		fill: $darker-accent;
+		width: 50px;
+		height: 50px;
+		position: absolute;
+		left: 50%;
+		margin-left: -25px;
+		top: 50%;
+		margin-top: -37px;
+		@include transition(all .1s ease-out);
+	}
+
+	&:hover{
+		svg{
+			//@include transform(scale(1.05));
+			fill: $main-accent-hover;
+		}
+
+		//font-size: 2.6em;
+		color: $main-accent-hover;
+		background: rgba(255,255,255,0.1);
+
+	}
+}
+
+.nav-selected{
+	color: $main-accent-hover;
+	background: rgba(255,255,255,0.1);
+
+	svg{
+		fill: $main-accent-hover;
+	}
+}
+
+/* FOOTER */
+footer{
+	position: fixed;
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	bottom: 0px;
+	left: 0;
+	color: $gray-text;
+	background: $nav-background;
+	font-size: 0.9em;
+	border-top: 3px solid $main-background;
+	border-top-left-radius: $nav-border-rad;
+	border-top-right-radius: $nav-border-rad;
+}
+
+
+/* * * * * * * * * * * * * * * *
+ *                             *
+ *        WIRE GENERAL         *
+ *                             *
+ * * * * * * * * * * * * * * * */
+ .coin_wrapper {
+ 	padding: 40px 40px;
+ }
+
+ a{
+ 	text-decoration: none;
+ 	color: $main-font;
+
+ 	&:visited{
+ 		color: $main-font;
+ 	}
+ }
+
+
+/* * * * * * * * * * * * * * * *
+ *                             *
+ *           WIRE 1            *
+ *                             *
+ * * * * * * * * * * * * * * * */
+ #w1-wrapper{
+ 	text-align: center;
+ 	padding-top: 120px;
+
+ 	&>section{
+ 		display: inline-block;
+ 		vertical-align: middle;
+ 		//border: 1px solid rgba(255,255,255,0.3);
+ 		margin: 0 50px;
+ 		width: 360px;
+ 	}
+
+ 	
+ }
+
+ #w1-left{
+ 	height: 230px;
+ 	text-align: left;
+
+ 	h1{
+ 		font-family: "monster_l", sans-serif;
+ 		font-size: 2em;
+ 	}
+
+ 	h3{
+ 		font-size: 1.1em;
+ 	}
+
+ 	a{
+ 		text-decoration: none;
+ 		color: $main-font;
+ 	}
+
+ 	span{
+ 		display: block;
+ 		width: 100%;
+ 		height: 55px;
+ 		line-height: 55px;
+ 		text-align: center;
+ 		font-size: 1.3em;
+ 		margin-top: 30px;
+ 		//@include box-sizing(border-box);
+ 	}
+
+ }
+
+ #sign-up-button{
+ 	background: #1C3A3F;
+ 	border: 1px solid #151515;
+ 	&:hover{
+ 		border: 1px solid $main-accent;
+ 	}
+ }
+
+ #log-in-button{
+ 	background: #397C86;
+ 	border: 1px solid #151515;
+ 	&:hover{
+ 		border: 1px solid $main-accent;
+ 	}
+ }
+
+ #w1-right{
+ 	height: 450px;
+
+ }
+
+ #iphone{
+ 	height: 100%;
+ 	width: 230px;
+ 	margin: 0 auto;
+ 	background: #151515;
+ 	border-radius: 30px;
+ 	border: 2px solid #565656;
+ 	position: relative;
+
+ 	&>div{
+ 		position: absolute;
+ 	}
+ }
+
+
+ #iphone-camera{
+ 	background: #252525;
+ 	width: 8px;
+ 	height: 8px;
+ 	border-radius: 100%;
+ 	top: 21px;
+ 	left: 75px;
+ }
+
+ #iphone-speaker{
+ 	background: #252525;
+ 	width: 40px;
+ 	height: 4px;
+ 	border-radius: 5px;
+ 	left: 50%;
+ 	margin-left: -20px;
+ 	top: 23px;
+ }
+
+ #iphone-screen{
+ 	position: relative !important;
+ 	height: 350px;
+ 	width: 210px;
+ 	margin: 50px 10px;
+ 	//background: #a1a1a1;
+ 	background-image: url("../assets/demo.png");
+ }
+
+ #iphone-home{
+ 	width: 30px;
+ 	height: 30px;
+ 	border: 2px solid #252525;
+ 	border-radius: 100%;
+ 	left: 50%;
+ 	margin-left: -15px;
+ 	bottom: 7px;
+ }
+
+
+/* * * * * * * * * * * * * * * *
+ *                             *
+ *           WIRE 2            *
+ *                             *
+ * * * * * * * * * * * * * * * */
+ .overview-panel{
+ 	display: inline-block;
+ 	vertical-align: top;
+ 	width: 300px;
+ 	//border: 1px solid gray;
+
+ 	.total-value{
+ 		width: 100%;
+ 		height: 80px;
+ 		background: $nav-background;
+ 		@include box-sizing(border-box);
+ 		padding: 10px 20px;
+
+ 		&>div{
+ 			display: inline-block;
+ 			vertical-align: bottom;
+ 		}
+
+ 		.total-dollars{
+ 			margin-top: 3px;
+ 			font-size: 2em;
+ 			font-weight: 900;
+ 		}
+
+ 		.total-change{
+ 			color: $gray-text;
+ 			position: relative;
+ 			bottom: 3px;
+ 			left: 2px;
+ 		}
+
+ 		.total-label{	
+ 			font-size: 1.1em;
+ 		}
+ 	}
+
+ 	.mobile-toggle{
+ 		display: none;
+ 		width: 100%;
+ 		height: 50px;
+ 		background: $nav-background;
+ 		font-size: 0;
+ 		border-top: 2px solid rgba(0,0,0,0.7);
+ 		white-space: nowrap;
+ 		.mobile-toggle-button{
+ 			width: 50%;
+ 			height: 100%;
+ 			text-align: center;
+ 			display: inline-block;
+ 			cursor: pointer;
+ 			@include box-sizing(border-box);
+ 			svg{
+ 				width: 40px;
+ 				height: 40px;
+ 				fill: $main-font;
+ 				margin-top: 5px;
+ 			}
+ 		}
+
+ 		.mobile-toggle-selected{
+ 			background: #51616D;
+ 			border: 1px solid rgba(255,255,255,0.2);
+ 		}
+ 	}
+
+ 	.market-status{
+ 		width: 100%;
+ 		height: 20px;
+ 		margin-top: 20px;
+ 		font-size: 1.05em;
+ 		&>div{
+ 			display: inline-block;
+ 		}
+
+ 		.market-open{
+ 			float: left;
+ 		}
+
+ 		.market-time{
+ 			float: right;
+ 		}
+ 	}
+
+ 	.market-list{
+ 		width: 100%;
+ 		margin-top: 20px;
+ 		
+ 		.market-item-header{
+ 			border-bottom: 1px solid $nav-background;
+ 			padding-bottom: 10px;
+ 			position: relative;
+ 			cursor: pointer;
+ 			svg{
+ 				position: absolute;
+ 				right: 5px;
+ 				top: 3px;
+ 				fill: $main-font;
+ 				width: 15px;
+ 				height: 15px;
+ 			}
+
+ 			&:hover{
+ 				color: $main-accent-hover;
+
+ 				svg{
+ 					fill: $main-accent-hover;
+ 				}
+ 			}
+ 		}
+
+ 		#current-spot{
+ 			&:hover{
+ 				color: $main-font;
+ 			}
+
+ 			cursor: default;
+ 		}
+
+ 		.market-item-stats{
+ 			@include box-sizing(border-box);
+ 			width: 100%;
+ 			padding: 10px 25px;
+
+ 			table{
+ 				width: 100%;
+
+ 				tr:first-child{
+ 					color: $main-accent;
+ 				}
+ 			}
+
+ 			td{
+ 				text-align: center;
+ 				width: 33%;
+ 				margin: 0;
+ 				padding: 5px 0;
+ 			}
+
+ 		}
+ 	}
+
+ 	.pos-change{
+ 		color: $positive-color !important;
+ 	}
+
+ 	.neg-change{
+ 		color: $negative-color !important;
+ 	}
+
+ }
+
+ .graph-panel-show{
+ 	visibility: visible !important;
+ 	height: auto !important;
+ 	overflow: visible !important;
+ }
+
+ .graph-panel{
+ 	display: inline-block;
+ 	vertical-align: top;
+ 	margin-left: 50px;
+ 	@include calc(width, "100% - 360px");
+ 	height: 400px;
+ 	position: relative;
+ 	//background: gray;
+
+ 	&>section{
+ 		display: inline-block;
+ 		vertical-align: top;
+ 	}
+
+ 	.chart-wrap{
+ 		@include calc(width, "100% - 150px");
+ 		height: 100%;
+ 	}
+
+ 	.chart-y-label{
+ 		position: absolute;
+ 		width: 400px;
+ 		text-align: center;
+ 		@include transform-origin(top left);
+ 		@include transform(rotate(90deg));
+ 	}
+
+ 	.chart-x-label{
+ 		position: absolute;
+ 		text-align: center;
+ 		@include calc(width, "100% - 150px");
+ 		bottom: -25px;
+ 	}
+
+ 	.chart-legend{
+ 		position: absolute;
+ 		width: 135px;
+ 		right: -5px;
+ 		margin-top: 12px;
+ 	}
+
+ 	.legend-item{
+ 		margin-bottom: 5px;
+ 		height: 20px;
+ 		line-height: 20px;
+ 		color: $gray-text;
+ 	}
+
+ 	.legend-item-color{
+ 		width: 14px;
+ 		height: 14px;
+ 		display: inline-block;
+ 		vertical-align: middle;
+ 		margin-right: 3px;
+ 	}
+
+ 	#legend-1{
+ 		background: $graph-red;
+ 	}
+
+ 	#legend-2{
+ 		background: $graph-orange;
+ 	}
+
+ 	#legend-3{
+ 		background: $graph-yellow;
+ 	}
+
+ 	#legend-4{
+ 		background: $graph-green;
+ 	}
+
+ 	#legend-5{
+ 		background: $graph-blue;
+ 	}
+
+ 	#legend-6{
+ 		background: $graph-purple;
+ 	}
+
+ }
+
+/* * * * * * * * * * * * * * * *
+ *                             *
+ *           WIRE 3            *
+ *                             *
+ * * * * * * * * * * * * * * * */
+
+ .current_gold {
+ 	margin-top: -24px;
+ 	margin-left: 170px;
+ 	margin-bottom: 0;
+ 	tr > td {
+ 		padding-bottom: 5px;
+ 	}
+ 	tr > td:first-child {
+ 		text-align: right;
+ 		padding-right: 10px;
+ 	}
+ 	tr > td:nth-child(2) {
+ 		color: $positive-color;
+ 	}
+ }
+
+ #my_gold_value {
+ 	position: absolute;
+ 	margin-top: -23px;
+ 	font-size: 12px;
+ }
+
+ .my_stack {
+ 	clear: both;
+ 	margin-top: 30px;
+ 	table {
+ 		width: 90%;
+ 		margin-top: 25px;
+ 		margin-left: auto;
+ 		margin-right: auto;
+ 		text-align: center;
+ 		border-spacing: 0px;
+ 		th {
+ 			width: 16%;
+ 			//text-align: left;
+ 			border-bottom: 1px solid white;
+ 			padding-top: 10px;
+ 			padding-bottom: 10px;
+ 			font-family: "monster_r";
+ 			font-weight: bold;
+ 		}
+ 		td {
+ 			padding-top: 10px;
+ 			padding-bottom: 10px;
+ 		}
+ 		tbody > tr:hover {
+ 			background-color: rgba(255,255,255,0.1);
+ 			cursor: pointer;
+ 		}
+ 		caption {
+ 			text-align: left;
+ 			section {
+ 				//display: inline-block;
+ 				h3 {
+ 					float: left;
+ 					margin-bottom: 20px;
+ 					margin-top: 9px;
+ 				}
+ 				.stack_ctrl {
+ 					float: right;
+ 					input {
+ 						width: 215px;
+ 						border-radius: 0;
+ 						margin-right: 15px;
+ 						padding-left: 5px;
+ 					}
+ 					svg {
+ 						margin-bottom: -7px;
+ 						cursor: pointer;
+ 					}
+ 				}
+ 			}
+ 		}
+ 	}
+ }
+ .coin_mini {
+ 	width: 35px;
+ 	height: 35px;
+ 	border-radius: 100%;
+ 	margin-left: auto;
+ 	margin-right: auto;
+ 	background-color: #5D5D5D;
+ }
+
+/* * * * * * * * * * * * * * * *
+ *                             *
+ *           WIRE 4            *
+ *                             *
+ * * * * * * * * * * * * * * * */
+
+ .coin_main {
+ 	width: 100%;
+ 	height: 100%;
+ 	position: relative;
+
+ 	.breadcrumb{
+ 		font-size: 1.2em;
+ 		height: 30px;
+ 		line-height: 30px;
+ 		margin-bottom: 15px;
+ 		cursor: pointer;
+
+ 		svg{
+ 			fill: $main-font;
+ 			width: 20px;
+ 			height: 20px;
+ 			position: relative;
+ 			top: 5px;
+ 		}
+
+ 		&:hover{
+ 			color: $main-accent;
+
+ 			svg{
+ 				fill: $main-accent;
+ 			}
+ 		}
+ 	}
+ }
+
+ .coin_image {
+ 	width: 275px;
+ 	height: 200px;
+ 	margin-bottom: 40px;
+ 	text-align: center;
+ 	float: left;
+ }
+
+ .coin_detail {
+ 	float: left;
+ 	padding-bottom: 50px;
+ 	a {
+ 		text-decoration: none;
+ 		color: $main-font;
+ 	}
+ 	span{
+ 		display: block;
+ 		height: 55px;
+ 		line-height: 55px;
+ 		text-align: center;
+ 		font-size: 1.3em;
+ 		margin-left: auto;
+ 		margin-right: auto;
+ 		//@include box-sizing(border-box);
+ 	}
+ 	table {
+ 		width: 275px;
+ 		margin-left: auto;
+ 		margin-right: auto;
+ 	}
+ 	tr > td {
+ 		padding-bottom: 15px;
+ 	}
+
+ 	tr > td:first-child {
+ 		text-align: right;
+ 		padding-right: 15px;
+ 	}
+
+ 	tr > td:nth-child(2) {
+ 		text-align: left;
+ 		color: $main-accent;
+ 	}
+ }
+
+ .img_box {
+ 	width: 200px;
+ 	height: 200px;
+ 	margin-left: auto;
+ 	margin-right: auto;
+ 	border: 1px dashed white;
+ }
+
+ .img_circle {
+ 	width: 160px;
+ 	height: 160px;
+ 	margin-left: auto;
+ 	margin-right: auto;
+ 	margin-top: 20px;
+ 	border-radius: 100%;
+ 	-webkit-border-radius: 100%;
+ 	-moz-border-radius: 100%;
+ 	-ms-border-radius: 100%;
+ 	background-color: #5D5D5D;
+ }
+
+ strong {
+ 	font-family: "monster_r";
+ 	font-weight: 700;
+ }
+
+/* * * * * * * * * * * * * * * *
+ *                             *
+ *           WIRE 5            *
+ *                             *
+ * * * * * * * * * * * * * * * */
+
+ input {
+ 	background-color: $input-bg-color;
+ 	width: 125px;
+ 	height: 27px;
+ 	padding: 0 10px;
+ 	border: none;
+ 	color: white;
+ 	font-family: "monster_h";
+ 	font-size: 12px;
+ 	border-radius: 5px;
+ 	outline: 0;
+ }
+
+ input:focus {
+ 	outline: 2px solid $main-accent;
+ }
+
+ select {
+ 	@include appearance(none);
+ 	background: url("../assets/down_arrow.svg") no-repeat;
+	background-position: 125px center;
+ 	background-color: $input-bg-color;
+ 	width: 145px;
+ 	height: 27px;
+ 	color: white;
+ 	border: none;
+ 	font-family: "monster_h";
+ 	font-size: 12px;
+ 	padding-left: 10px;
+ 	border-radius: 5px;
+ 	outline: 0;
+ }
+
+ #save {
+ 	background: #397C86;
+ 	border: 1px solid #151515;
+ 	&:hover{
+ 		border: 1px solid $main-accent;
+ 	}
+ 	color: white;
+ 	text-decoration: none;
+ 	width: 275px;
+ }
+
+ #cancel {
+ 	background: #1C3A3F;
+ 	border: 1px solid #151515;
+ 	&:hover{
+ 		border: 1px solid $main-accent;
+ 	}
+ 	color: white;
+ 	text-decoration: none;
+ 	width: 275px;
+ 	//width: 200px;
+ 	height: 40px;
+ 	line-height: 40px;
+ 	margin-top: 15px;
+ }
+
+/* * * * * * * * * * * * * * * *
+ *                             *
+ *     RESPONSIVE HANDLING     *
+ *                             *
+ * * * * * * * * * * * * * * * */
+ @media screen and (max-width: 1000px){
+ 	#w1-wrapper section{
+ 		margin: 50px 0px;
+ 	}
+ 	aside {
+ 		display: none;
+ 		visibility: hidden;
+ 	}
+ 	.main-section {
+ 		padding-left: 0;
+ 	}
+ 	.coin_main {
+ 		width: 100%;
+ 		text-align: center;
+ 	}
+ 	nav {
+ 		display: none;
+ 		visibility: hidden;
+ 	}
+ 	.mobile-nav {
+ 		display: block;
+ 	}
+ 	.coin_main {
+ 		display: inline;
+ 	}
+ 	.coin_image {
+ 		float: none;
+ 		margin-left: auto;
+ 		margin-right: auto;
+ 	}
+ 	.coin_detail {
+ 		float: none;
+ 		margin-left: auto;
+ 		margin-right: auto;
+ 	}
+
+ 	.breadcrumb{
+ 		display: none;
+ 	}
+
+ 	.my_stack{
+ 		.label-and-search{
+ 			display: none;
+ 		}
+ 	}
+
+ 	.overview-panel{
+ 		width: 100%;
+
+ 		.mobile-toggle{
+ 			display: block;
+ 		}
+ 		
+ 	}
+
+ 	.graph-panel{
+ 		visibility: hidden;
+ 		height: 0;
+ 		overflow: hidden;
+ 		width: 100%;
+ 		margin: 0;
+ 		margin-top: 20px;
+ 		padding-bottom: 0px;
+
+ 		.chart-legend{
+ 			display: block;
+ 			width: 100%;
+ 			position: relative;
+ 			text-align: center;
+ 		}
+
+ 		.chart-wrap{
+ 			width: 100%;
+ 			height: 400px;
+ 		}
+
+ 		.chart-x-label{
+ 			width: 100%;
+ 		}
+
+ 		.legend-left-half{
+ 			display: inline-block;
+ 			text-align: left;
+ 		}
+
+ 		.legend-right-half{
+ 			display: inline-block;
+ 			text-align: left;
+ 			margin-left: 30px;
+ 		}
+ 	}
+
+ 	.stack_img_col {
+ 		display: none;
+ 		visibility: hidden;
+ 	}
+
+ 	.weight_compr {
+ 		span {
+ 			display: none;
+ 			visibility: hidden;
+ 		}
+ 		&:after {
+ 			content: "Weight";
+ 		}
+ 	}
+
+ 	.percent_compr {
+ 		span {
+ 			display: none;
+ 			visibility: hidden;
+ 		}
+ 		&:after {
+ 			content: "%";
+ 		}
+ 	}
+
+ 	.stack_ctrl {
+ 		display: none;
+ 		visibility: hidden;
+ 	}
+ }

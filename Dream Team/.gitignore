@@ -1,0 +1,11 @@
+.DS_Store
+.idea/
+.sass-cache/
+.*.swp
+*.tmp
+*.bak
+*.pdf
+*~.nib
+*.pyc
+*.class
+style.css.map
