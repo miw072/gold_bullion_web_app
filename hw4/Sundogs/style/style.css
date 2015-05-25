@@ -1,0 +1,1093 @@
+/* * * * * * * * * * * * * * * *
+ *                             *
+ *           FONTS             *
+ *                             *
+ * * * * * * * * * * * * * * * */
+
+@font-face {
+    font-family: "robotolight";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/Roboto-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "robotocon";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/RobotoCondensed-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/RobotoCondensed-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "openlight";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/OpenSans-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "openregular";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/OpenSans-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "opensemi";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/OpenSans-Semibold.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Semibold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "raleway_r";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/Raleway-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Raleway-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "raleway_m";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/Raleway-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/Raleway-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "monster_h";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/montserrat-hairline-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/montserrat-hairline-webfont.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "monster_l";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/montserrat-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/montserrat-light-webfont.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "monster_r";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/montserrat-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/montserrat-regular-webfont.ttf") format("truetype");
+}
+/* SASS VARIABLES */
+/* * * * * * * * * * * * * * * *
+ *                             *
+ *        GENERAL STYLE        *
+ *                             *
+ * * * * * * * * * * * * * * * */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 14px;
+}
+
+body {
+    background: #1D1D1D;
+    font-family: "monster_h", sans-serif;
+    font-weight: 600;
+    color: #E6E6E6;
+}
+
+.main-section {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-top: 63px;
+    padding-bottom: 33px;
+    padding-left: 103px;
+}
+/* * * * * * * * * * * * * * * *
+ *                             *
+ *     NAVIGATION & FOOTER     *
+ *                             *
+ * * * * * * * * * * * * * * * */
+/* TOP NAV */
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background: #272E32;
+    font-size: 1.5em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left: 0px;
+    text-align: center;
+    font-weight: 700;
+    color: #fafafa;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    box-shadow: 0px 2px 5px #1D1D1D;
+    z-index: 999;
+}
+
+nav svg {
+    width: 30px;
+    height: 30px;
+    fill: #55B7C5;
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    cursor: pointer;
+    -webkit-transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out;
+}
+
+nav svg:hover {
+    fill: #77EDFF;
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+nav .icon-spinner2 {
+    left: 35px;
+}
+
+nav .icon-cog {
+    right: 35px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #E6E6E6;
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background: #272E32;
+    font-size: 1.5em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left: 0px;
+    text-align: center;
+    font-weight: 700;
+    color: #fafafa;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    box-shadow: 0px 2px 5px #1D1D1D;
+    z-index: 999;
+    display: none;
+}
+
+.mobile-nav svg {
+    display: block;
+    width: 40px;
+    height: 40px;
+    fill: #55B7C5;
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    cursor: pointer;
+    -webkit-transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out;
+}
+
+.mobile-nav svg:hover {
+    fill: #77EDFF;
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+.mobile-nav .icon-keyboard-arrow-left {
+    left: 20px;
+}
+
+.mobile-nav .icon-add {
+    right: 20px;
+}
+/* SIDE NAV */
+
+aside {
+    position: fixed;
+    top: 63px;
+    left: 0;
+    height: -webkit-calc(100% - 96px);
+    height: calc(100% - 96px);
+    width: 100px;
+    background: #272E32;
+    border-radius: 0px;
+}
+
+aside a {
+    text-decoration: none;
+}
+
+aside figure {
+    width: 100%;
+    height: 100px;
+    border-bottom: 3px solid #1D1D1D;
+    cursor: pointer;
+    color: #55B7C5;
+    text-align: center;
+    line-height: 80px;
+    font-size: 2.5em;
+    position: relative;
+    -webkit-transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out;
+}
+
+aside figure figcaption {
+    font-size: 14px;
+    position: relative;
+    top: -42px;
+    font-family: "monster_h", sans-serif;
+    color: #B1B1B1;
+}
+
+aside figure svg {
+    fill: #55B7C5;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 50%;
+    margin-left: -25px;
+    top: 50%;
+    margin-top: -37px;
+    -webkit-transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out;
+}
+
+aside figure:hover {
+    color: #77EDFF;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+aside figure:hover svg {
+    fill: #77EDFF;
+}
+
+.nav-selected {
+    color: #77EDFF;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-selected svg {
+    fill: #77EDFF;
+}
+/* FOOTER */
+
+footer {
+    position: fixed;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    bottom: 0px;
+    left: 0;
+    color: #B1B1B1;
+    background: #272E32;
+    font-size: 0.9em;
+    border-top: 3px solid #1D1D1D;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+/* * * * * * * * * * * * * * * *
+ *                             *
+ *        WIRE GENERAL         *
+ *                             *
+ * * * * * * * * * * * * * * * */
+
+.coin_wrapper {
+    padding: 40px 40px;
+}
+
+a {
+    text-decoration: none;
+    color: #E6E6E6;
+}
+
+a:visited {
+    color: #E6E6E6;
+}
+/* * * * * * * * * * * * * * * *
+ *                             *
+ *           WIRE 1            *
+ *                             *
+ * * * * * * * * * * * * * * * */
+
+#w1-wrapper {
+    text-align: center;
+    padding-top: 120px;
+}
+
+#w1-wrapper > section {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 50px;
+    width: 360px;
+}
+
+#w1-left {
+    height: 230px;
+    text-align: left;
+}
+
+#w1-left h1 {
+    font-family: "monster_l", sans-serif;
+    font-size: 2em;
+}
+
+#w1-left h3 {
+    font-size: 1.1em;
+}
+
+#w1-left a {
+    text-decoration: none;
+    color: #E6E6E6;
+}
+
+#w1-left span {
+    display: block;
+    width: 100%;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    font-size: 1.3em;
+    margin-top: 30px;
+}
+
+#sign-up-button {
+    background: #1C3A3F;
+    border: 1px solid #151515;
+}
+
+#sign-up-button:hover {
+    border: 1px solid #68CEDE;
+}
+
+#log-in-button {
+    background: #397C86;
+    border: 1px solid #151515;
+}
+
+#log-in-button:hover {
+    border: 1px solid #68CEDE;
+}
+
+#w1-right {
+    height: 450px;
+}
+
+#iphone {
+    height: 100%;
+    width: 230px;
+    margin: 0 auto;
+    background: #151515;
+    border-radius: 30px;
+    border: 2px solid #565656;
+    position: relative;
+}
+
+#iphone > div {
+    position: absolute;
+}
+
+#iphone-camera {
+    background: #252525;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    top: 21px;
+    left: 75px;
+}
+
+#iphone-speaker {
+    background: #252525;
+    width: 40px;
+    height: 4px;
+    border-radius: 5px;
+    left: 50%;
+    margin-left: -20px;
+    top: 23px;
+}
+
+#iphone-screen {
+    position: relative !important;
+    height: 350px;
+    width: 210px;
+    margin: 50px 10px;
+    background-image: url("../assets/demo.png");
+}
+
+#iphone-home {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #252525;
+    border-radius: 100%;
+    left: 50%;
+    margin-left: -15px;
+    bottom: 7px;
+}
+/* * * * * * * * * * * * * * * *
+ *                             *
+ *           WIRE 2            *
+ *                             *
+ * * * * * * * * * * * * * * * */
+
+.overview-panel {
+    display: inline-block;
+    vertical-align: top;
+    width: 300px;
+}
+
+.overview-panel .total-value {
+    width: 100%;
+    height: 80px;
+    background: #272E32;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px 20px;
+}
+
+.overview-panel .total-value > div {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.overview-panel .total-value .total-dollars {
+    margin-top: 3px;
+    font-size: 2em;
+    font-weight: 900;
+}
+
+.overview-panel .total-value .total-change {
+    color: #B1B1B1;
+    position: relative;
+    bottom: 3px;
+    left: 2px;
+}
+
+.overview-panel .total-value .total-label {
+    font-size: 1.1em;
+}
+
+.overview-panel .mobile-toggle {
+    display: none;
+    width: 100%;
+    height: 50px;
+    background: #272E32;
+    font-size: 0;
+    border-top: 2px solid rgba(0, 0, 0, 0.7);
+    white-space: nowrap;
+}
+
+.overview-panel .mobile-toggle .mobile-toggle-button {
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.overview-panel .mobile-toggle .mobile-toggle-button svg {
+    width: 40px;
+    height: 40px;
+    fill: #E6E6E6;
+    margin-top: 5px;
+}
+
+.overview-panel .mobile-toggle .mobile-toggle-selected {
+    background: #51616D;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.overview-panel .market-status {
+    width: 100%;
+    height: 20px;
+    margin-top: 20px;
+    font-size: 1.05em;
+}
+
+.overview-panel .market-status > div {
+    display: inline-block;
+}
+
+.overview-panel .market-status .market-open {
+    float: left;
+}
+
+.overview-panel .market-status .market-time {
+    float: right;
+}
+
+.overview-panel .market-list {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.overview-panel .market-list .market-item-header {
+    border-bottom: 1px solid #272E32;
+    padding-bottom: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.overview-panel .market-list .market-item-header svg {
+    position: absolute;
+    right: 5px;
+    top: 3px;
+    fill: #E6E6E6;
+    width: 15px;
+    height: 15px;
+}
+
+.overview-panel .market-list .market-item-header:hover {
+    color: #77EDFF;
+}
+
+.overview-panel .market-list .market-item-header:hover svg {
+    fill: #77EDFF;
+}
+
+.overview-panel .market-list #current-spot {
+    cursor: default;
+}
+
+.overview-panel .market-list #current-spot:hover {
+    color: #E6E6E6;
+}
+
+.overview-panel .market-list .market-item-stats {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 25px;
+}
+
+.overview-panel .market-list .market-item-stats table {
+    width: 100%;
+}
+
+.overview-panel .market-list .market-item-stats table tr:first-child {
+    color: #68CEDE;
+}
+
+.overview-panel .market-list .market-item-stats td {
+    text-align: center;
+    width: 33%;
+    margin: 0;
+    padding: 5px 0;
+}
+
+.overview-panel .pos-change {
+    color: #A7FF8B !important;
+}
+
+.overview-panel .neg-change {
+    color: #FF6A65 !important;
+}
+
+.graph-panel-show {
+    visibility: visible !important;
+    height: auto !important;
+    overflow: visible !important;
+}
+
+.graph-panel {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 50px;
+    width: -webkit-calc(100% - 360px);
+    width: calc(100% - 360px);
+    height: 400px;
+    position: relative;
+}
+
+.graph-panel > section {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.graph-panel .chart-wrap {
+    width: -webkit-calc(100% - 150px);
+    width: calc(100% - 150px);
+    height: 100%;
+}
+
+.graph-panel .chart-y-label {
+    position: absolute;
+    width: 400px;
+    text-align: center;
+    -webkit-transform-origin: top left;
+    -moz-transform-origin: top left;
+    -ms-transform-origin: top left;
+    -o-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.graph-panel .chart-x-label {
+    position: absolute;
+    text-align: center;
+    width: -webkit-calc(100% - 150px);
+    width: calc(100% - 150px);
+    bottom: -25px;
+}
+
+.graph-panel .chart-legend {
+    position: absolute;
+    width: 135px;
+    right: -5px;
+    margin-top: 12px;
+}
+
+.graph-panel .legend-item {
+    margin-bottom: 5px;
+    height: 20px;
+    line-height: 20px;
+    color: #B1B1B1;
+}
+
+.graph-panel .legend-item-color {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 3px;
+}
+
+.graph-panel #legend-1 {
+    background: #FF6D67;
+}
+
+.graph-panel #legend-2 {
+    background: #FFA859;
+}
+
+.graph-panel #legend-3 {
+    background: #F3FF88;
+}
+
+.graph-panel #legend-4 {
+    background: #9FFF98;
+}
+
+.graph-panel #legend-5 {
+    background: #BBF5FF;
+}
+
+.graph-panel #legend-6 {
+    background: #C29FFF;
+}
+/* * * * * * * * * * * * * * * *
+ *                             *
+ *           WIRE 3            *
+ *                             *
+ * * * * * * * * * * * * * * * */
+
+.current_gold {
+    margin-top: -24px;
+    margin-left: 170px;
+    margin-bottom: 0;
+}
+
+.current_gold tr > td {
+    padding-bottom: 5px;
+}
+
+.current_gold tr > td:first-child {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.current_gold tr > td:nth-child(2) {
+    color: #A7FF8B;
+}
+
+#my_gold_value {
+    position: absolute;
+    margin-top: -23px;
+    font-size: 12px;
+}
+
+.my_stack {
+    clear: both;
+    margin-top: 30px;
+}
+
+.my_stack table {
+    width: 90%;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border-spacing: 0px;
+}
+
+.my_stack table th {
+    width: 16%;
+    border-bottom: 1px solid white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: "monster_r";
+    font-weight: bold;
+}
+
+.my_stack table td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.my_stack table tbody > tr:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+.my_stack table caption {
+    text-align: left;
+}
+
+.my_stack table caption section h3 {
+    float: left;
+    margin-bottom: 20px;
+    margin-top: 9px;
+}
+
+.my_stack table caption section .stack_ctrl {
+    float: right;
+}
+
+.my_stack table caption section .stack_ctrl input {
+    width: 215px;
+    border-radius: 0;
+    margin-right: 15px;
+    padding-left: 5px;
+}
+
+.my_stack table caption section .stack_ctrl svg {
+    margin-bottom: -7px;
+    cursor: pointer;
+}
+
+.coin_mini {
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #5D5D5D;
+}
+/* * * * * * * * * * * * * * * *
+ *                             *
+ *           WIRE 4            *
+ *                             *
+ * * * * * * * * * * * * * * * */
+
+.coin_main {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.coin_main .breadcrumb {
+    font-size: 1.2em;
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.coin_main .breadcrumb svg {
+    fill: #E6E6E6;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 5px;
+}
+
+.coin_main .breadcrumb:hover {
+    color: #68CEDE;
+}
+
+.coin_main .breadcrumb:hover svg {
+    fill: #68CEDE;
+}
+
+.coin_image {
+    width: 275px;
+    height: 200px;
+    margin-bottom: 40px;
+    text-align: center;
+    float: left;
+}
+
+.coin_detail {
+    float: left;
+    padding-bottom: 50px;
+}
+
+.coin_detail a {
+    text-decoration: none;
+    color: #E6E6E6;
+}
+
+.coin_detail span {
+    display: block;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    font-size: 1.3em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.coin_detail table {
+    width: 275px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.coin_detail tr > td {
+    padding-bottom: 15px;
+}
+
+.coin_detail tr > td:first-child {
+    text-align: right;
+    padding-right: 15px;
+}
+
+.coin_detail tr > td:nth-child(2) {
+    text-align: left;
+    color: #68CEDE;
+}
+
+.img_box {
+    width: 200px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px dashed white;
+}
+
+.img_circle {
+    width: 160px;
+    height: 160px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    background-color: #5D5D5D;
+}
+
+strong {
+    font-family: "monster_r";
+    font-weight: 700;
+}
+/* * * * * * * * * * * * * * * *
+ *                             *
+ *           WIRE 5            *
+ *                             *
+ * * * * * * * * * * * * * * * */
+
+input {
+    background-color: #4c4c4c;
+    width: 125px;
+    height: 27px;
+    padding: 0 10px;
+    border: none;
+    color: white;
+    font-family: "monster_h";
+    font-size: 12px;
+    border-radius: 5px;
+    outline: 0;
+}
+
+input:focus {
+    outline: 2px solid #68CEDE;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    background: url("../assets/down_arrow.svg") no-repeat;
+    background-position: 125px center;
+    background-color: #4c4c4c;
+    width: 145px;
+    height: 27px;
+    color: white;
+    border: none;
+    font-family: "monster_h";
+    font-size: 12px;
+    padding-left: 10px;
+    border-radius: 5px;
+    outline: 0;
+}
+
+#save {
+    background: #397C86;
+    border: 1px solid #151515;
+    color: white;
+    text-decoration: none;
+    width: 275px;
+}
+
+#save:hover {
+    border: 1px solid #68CEDE;
+}
+
+#cancel {
+    background: #1C3A3F;
+    border: 1px solid #151515;
+    color: white;
+    text-decoration: none;
+    width: 275px;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 15px;
+}
+
+#cancel:hover {
+    border: 1px solid #68CEDE;
+}
+/* * * * * * * * * * * * * * * *
+ *                             *
+ *     RESPONSIVE HANDLING     *
+ *                             *
+ * * * * * * * * * * * * * * * */
+
+@media screen and (max-width: 1000px) {
+    #w1-wrapper section {
+        margin: 50px 0px;
+    }
+    aside {
+        display: none;
+        visibility: hidden;
+    }
+    .main-section {
+        padding-left: 0;
+    }
+    .coin_main {
+        width: 100%;
+        text-align: center;
+    }
+    nav {
+        display: none;
+        visibility: hidden;
+    }
+    .mobile-nav {
+        display: block;
+    }
+    .coin_main {
+        display: inline;
+    }
+    .coin_image {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .coin_detail {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .breadcrumb {
+        display: none;
+    }
+    .my_stack .label-and-search {
+        display: none;
+    }
+    .overview-panel {
+        width: 100%;
+    }
+    .overview-panel .mobile-toggle {
+        display: block;
+    }
+    .graph-panel {
+        visibility: hidden;
+        height: 0;
+        overflow: hidden;
+        width: 100%;
+        margin: 0;
+        margin-top: 20px;
+        padding-bottom: 0px;
+    }
+    .graph-panel .chart-legend {
+        display: block;
+        width: 100%;
+        position: relative;
+        text-align: center;
+    }
+    .graph-panel .chart-wrap {
+        width: 100%;
+        height: 400px;
+    }
+    .graph-panel .chart-x-label {
+        width: 100%;
+    }
+    .graph-panel .legend-left-half {
+        display: inline-block;
+        text-align: left;
+    }
+    .graph-panel .legend-right-half {
+        display: inline-block;
+        text-align: left;
+        margin-left: 30px;
+    }
+    .stack_img_col {
+        display: none;
+        visibility: hidden;
+    }
+    .weight_compr span {
+        display: none;
+        visibility: hidden;
+    }
+    .weight_compr:after {
+        content: "Weight";
+    }
+    .percent_compr span {
+        display: none;
+        visibility: hidden;
+    }
+    .percent_compr:after {
+        content: "%";
+    }
+    .stack_ctrl {
+        display: none;
+        visibility: hidden;
+    }
+}
