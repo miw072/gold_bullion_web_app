@@ -10,16 +10,19 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <script src="./js/jquery-1.11.2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-serialize-object/2.0.0/jquery.serialize-object.compiled.js"></script>
     <script src="./js/velocity.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/1.1.1/firebase.js"></script>
     <script src="./js/main.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.2.5/firebase.js"></script>
     <!-- Firebase -->
 
 <!-- Firebase Simple Login -->
 <script src="https://cdn.firebase.com/js/simple-login/1.6.2/firebase-simple-login.js"></script>
-
+<script src="./js/loggin.js"></script>
     <title>Login - CoinFlip</title>
 <script type="text/javascript">
+
 var ref = new Firebase("https://glaring-torch-6623.firebaseio.com");
 var auth = new FirebaseSimpleLogin(ref,function(error,user) {
   if (error) {
@@ -38,7 +41,24 @@ var auth = new FirebaseSimpleLogin(ref,function(error,user) {
         });
     });
    
-</script>
+
+        $(document).ready(function($) {
+            $('#accordion').find('.accordion-toggle').click(function(){
+
+                //Expand or collapse this panel
+                $(this).next().slideToggle('fast');
+
+                //Hide the other panels
+                $(".accordion-content").not($(this).next()).slideUp('fast');
+
+            });
+        });
+    </script>
+    <style>
+        .accordion-toggle {cursor: pointer;}
+        .accordion-content {display: none;}
+        .accordion-content.default {display: block;}
+    </style>
 </head>
 
 <body>
@@ -53,8 +73,38 @@ var auth = new FirebaseSimpleLogin(ref,function(error,user) {
         <section id="w1-left">
             <h1>COINFLIP</h1>
             <h3>Manage your coin collection with a simple app.</h3>
-            <a href="wire2.html"><span id="sign-up-button">Sign up</span></a>
-            <a href="wire2.html"><span id="log-in-button">Log in</span></a>
+            <div id="accordion">
+                <span id="sign-up-button" class="accordion-toggle" >Sign up</span>
+                <div class="accordion-content default">
+                    <form id="Sign" role="form">
+                        <div class="form-group">
+                            <label for="txtEmail">Email address</label>
+                            <input type="email" class="form-control" id="txtEmail" placeholder="Enter email" name="email" />
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="txtPass">Password</label>
+                            <input type="password" class="form-control" id="txtPass" placeholder="Password" name="password" />
+                        </div>
+                        <button type="submit" class="btn btn-default btn-block">Register</button>
+                    </form>
+                </div>
+                <span id="log-in-button" class="accordion-toggle" >Log in</span>
+                <div class="accordion-content">
+                    <form id="Login" role="form">
+                        <div class="form-group">
+                            <label for="txtRegEmail">Email address</label>
+                            <input type="email" class="form-control" id="txtEmail" placeholder="Enter email" name="email" />
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="txtRegPass">Password</label>
+                            <input type="password" class="form-control" id="txtPass" placeholder="Password" name="password" />
+                        </div>
+                        <button type="submit" class="btn btn-default">Log_In</button>
+                    </form>
+                </div>
+            </div>
         </section>
 
         <section id="w1-right">

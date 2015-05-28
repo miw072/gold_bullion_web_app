@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="bullion management site, rare coins, gold, silver, platinum">
+    <meta name="author" content="CSE134B Dream Team">
+    <link rel="stylesheet" type="text/css" href="./style/style.css">
+    <meta name=viewport content="width=device-width, initial-scale=.8, minimum-scale = .8, user-scalable=yes">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <script src="./js/jquery-1.11.2.min.js"></script>
+    <script src="./js/Chart.js"></script>
+    <script src="./js/main.js"></script>
+    <title>Home - CoinFlip</title>
+</head>
+
+<body>
+    <script type="text/javascript">loadTopNavPersist();</script>
+    <script type="text/javascript">loadSideNav(0);</script>
+
+    <section class="main-section">
+
+
+        <section class="coin_wrapper">
+            <section class="overview-panel">
+                <section class="total-value">
+                    <div class="total-dollars">$24,249.23</div>
+                    <div class="total-change pos-change">+3.5%</div><br/>
+                    <div class="total-label">My Total Coin Value</div>
+                </section>
+                <section class="mobile-toggle">
+                    <div class="mobile-toggle-button mtb-1 mobile-toggle-selected">
+                        <svg class="icon icon-menu">
+                            <symbol id="icon-menu" viewBox="0 0 1024 1024">
+                                <title>menu</title>
+                                <path class="path1" d="M128 768h768v-85.333h-768v85.333zM128 554.667h768v-85.333h-768v85.333zM128 256v85.333h768v-85.333h-768z"></path>
+                            </symbol>
+                            <use xlink:href="#icon-menu"></use>
+                        </svg>
+                    </div>
+                    <div class="mobile-toggle-button mtb-2">
+                        <svg class="icon icon-graph">
+                            <symbol id="icon-graph" viewBox="0 -200 1424 1424">
+                                <title>graph</title>
+                                <path class="path1" d="M704 256h-192v640h192v-640zM960 448h-192v448h192v-448zM64 960v-128h64v-64h-64v-128h64v-64h-64v-128h64v-64h-64v-128h64v-64h-64v-128h64v-64h-128v1024h1024v-64h-960zM448 576h-192v320h192v-320z"></path>
+                            </symbol>
+                            <use xlink:href="#icon-graph"></use>
+                        </svg>
+                    </div>
+                </section>
+                <section class="market-status">
+                    <div class="market-open">Market is open</div>
+                    <div class="market-time">closes in 3h 36min</div>
+                </section>
+                <section class="market-list">
+
+                    <a href="wire3.html">
+                        <section class="market-item-header">
+                            Gold
+                            <svg class="icon icon-play-arrow">
+                                <symbol id="icon-play-arrow1" viewBox="0 0 1024 1024">
+                                    <title>play-arrow</title>
+                                    <path class="path1" d="M341.333 213.333v597.333l469.333-298.667z"></path>
+                                </symbol>
+                                <use xlink:href="#icon-play-arrow1"></use>
+                            </svg>
+                        </section>
+                    </a>
+                    <section class="market-item-stats">
+                        <table>
+                            <tr>
+                                <td>1206.10</td>
+                                <td>1207.10</td>
+                                <td class="pos-change">+23.40</td>
+                            </tr>                    
+                            <tr>
+                                <td>Bid</td>
+                                <td>Ask</td>
+                                <td>Change</td>
+                            </tr>
+                        </table>
+                    </section>
+
+
+                    <a href="wire3.html">
+                        <section class="market-item-header">
+                            Silver
+                            <svg class="icon icon-play-arrow">
+                                <symbol id="icon-play-arrow2" viewBox="0 0 1024 1024">
+                                    <title>play-arrow</title>
+                                    <path class="path1" d="M341.333 213.333v597.333l469.333-298.667z"></path>
+                                </symbol>
+                                <use xlink:href="#icon-play-arrow2"></use>
+                            </svg>
+                        </section>
+                    </a>
+                    <section class="market-item-stats">
+                        <table>
+                            <tr>
+                                <td>16.10</td>
+                                <td>16.50</td>
+                                <td class="neg-change">-0.36</td>
+                            </tr>                    
+                            <tr>
+                                <td>Bid</td>
+                                <td>Ask</td>
+                                <td>Change</td>
+                            </tr>
+                        </table>
+                    </section>
+                    <a href="wire3.html">
+                        <section class="market-item-header">
+                            Platinum
+                            <svg class="icon icon-play-arrow">
+                                <symbol id="icon-play-arrow3" viewBox="0 0 1024 1024">
+                                    <title>play-arrow</title>
+                                    <path class="path1" d="M341.333 213.333v597.333l469.333-298.667z"></path>
+                                </symbol>
+                                <use xlink:href="#icon-play-arrow3"></use>
+                            </svg>
+                        </section>
+                    </a>
+                    <section class="market-item-stats">
+                        <table>
+                            <tr>
+                                <td>1206.10</td>
+                                <td>1207.10</td>
+                                <td class="pos-change">+23.40</td>
+                            </tr>                    
+                            <tr>
+                                <td>Bid</td>
+                                <td>Ask</td>
+                                <td>Change</td>
+                            </tr>
+                        </table>
+                    </section>
+                </section>
+            </section>
+
+            <section class="graph-panel">
+                <section class="chart-legend">
+                    <div class="legend-left-half">
+                        <section class="legend-item">
+                            <div class="legend-item-color" id="legend-1"></div>
+                            Gold Total
+                        </section>
+                        <section class="legend-item">
+                            <div class="legend-item-color" id="legend-2"></div>
+                            Platinum Total
+                        </section>            
+                        <section class="legend-item">
+                            <div class="legend-item-color" id="legend-3"></div>
+                            Silver Total
+                        </section>  
+                    </div>
+                    <div class="legend-right-half">      
+                        <section class="legend-item">
+                            <div class="legend-item-color" id="legend-4"></div>
+                            1oz Gold
+                        </section>            
+                        <section class="legend-item">
+                            <div class="legend-item-color" id="legend-5"></div>
+                            1oz Platinum
+                        </section>            
+                        <section class="legend-item">
+                            <div class="legend-item-color" id="legend-6"></div>
+                            1oz Silver
+                        </section>
+                    </div>    
+                </section>
+                <div class="chart-y-label">PRICE</div>
+                <div class="chart-x-label">TIME</div>
+                <section class="chart-wrap">
+                    <canvas id="total-chart"></canvas>
+                </section>
+
+            </section>
+        </section>
+
+    </section>
+
+    <script type="text/javascript">loadFooter();</script>
+</body>
+
+</html>

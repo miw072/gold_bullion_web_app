@@ -959,17 +959,16 @@ select {
 }
 
 #save {
-     background: #397C86;
-     border: 1px solid #151515;
-     color: white;
-     text-decoration: none;
-     width: 275px;
- }
+    background: #397C86;
+    border: 1px solid #151515;
+    color: white;
+    text-decoration: none;
+    width: 275px;
+}
 
 #save:hover {
     border: 1px solid #68CEDE;
 }
-
 
 #cancel {
     background: #1C3A3F;
@@ -985,57 +984,6 @@ select {
 #cancel:hover {
     border: 1px solid #68CEDE;
 }
-
-
-
-/* * * * * * * * * * * * * * * *
- *                             *
- *           EDIT              *
- *                             *
- * * * * * * * * * * * * * * * */
-/* by Mingxuan Wang*/
-#to_edit{
-    background: #1C3A3F;
-    border: 1px solid #1C3A3F;
-    color: white;
-    text-decoration: none;
-    line-height: 50px;
-}
-
-#to_edit:hover {
-    border: 1px solid #68CEDE;
-}
-
-#edit_save {
-    background: #397C86;
-    border: 1px solid #151515;
-    color: white;
-    text-decoration: none;
-    width: 275px;
-}
-
-#edit_save:hover {
-    border: 1px solid #68CEDE;
-}
-
-#edit_delete {
-    background: #1C3A3F;
-    border: 1px solid #151515;
-    color: white;
-    text-decoration: none;
-    width: 275px;
-    height: 40px;
-    line-height: 40px;
-    margin-top: 15px;
-}
-
-#edit_delete:hover {
-    border: 1px solid #68CEDE;
-}
-
-
-
-
 /* * * * * * * * * * * * * * * *
  *                             *
  *     RESPONSIVE HANDLING     *

@@ -1,4 +1,3 @@
-
 function loadTopNav(){
 	document.write("    <nav>");
 	document.write("        <svg class=\"icon-spinner2\">");
@@ -114,12 +113,9 @@ $(window).load(function() {
 	 	location.reload();	
 	 });
 
-	$('tr').click(function(){
-		if($(this).find('a').length > 0) {
-			$(this).find('a')[0].click();
-		}
-	});
-
+	 $('tr').click(function(){
+	 	$(this).find('a')[0].click();
+	 });
 
 	/* * * * * * * * * * * * * *
 	 *                         *
@@ -127,47 +123,14 @@ $(window).load(function() {
 	 *                         *
 	 * * * * * * * * * * * * * */
  	// graph for wire2 page
-	function myfuntion(myAPI){
-		var json = null;
-		$.ajax({
-			'async': false,
-			'global': false,
-			'url': myAPI,
-			'dataType': "json",
-			'success': function (data) {
-				json = data.data;
-			}
-		});
-		return json;
-	}
  	var drawGraph = function(){
  		var pointStroke = "rgba(255,255,255,0.6)";
  		var pointHighlightFill = "#fff";
  		var pointHighlightStroke = "#fff";
 
  		if(page == "wire2.html") {
-
-			var myAPI = "https://www.quandl.com/api/v1/datasets/WSJ/PL_EIB.json?auth_token=5s-ML76zo41KMnmSPPf_&trim_start=2015-02-22";
-
-			var json = myfuntion(myAPI);
-
-			var myDataSet = [];
-			var myDate = [];
-			for (i=0;i<30;i++){
-				myDataSet.splice(0,0,json[i][1]);
-				if (i==0){
-					myDate.splice(0,0,json[i][0]);
-				}
-				else if (i==29){
-					myDate.splice(0,0,json[i][0]);
-				}
-				else
-					myDate.splice(0,0,"");
-			}
-
-
  			var data = {
- 				labels: myDate,
+ 				labels: ["January", "February", "March", "April", "May", "June", "July"],
  				datasets: [
  				{
  					label: "Gold Total",
@@ -177,7 +140,7 @@ $(window).load(function() {
  					pointStrokeColor: pointStroke,
  					pointHighlightFill: pointHighlightFill,
  					pointHighlightStroke: pointHighlightStroke,
- 					data: myDataSet
+ 					data: [700,820,700,800,730,950,900]
  				},
  				{
  					label: "Platinum Total",
@@ -259,7 +222,7 @@ $(window).load(function() {
 			    pointDot : true,
 
 			    //Number - Radius of each point dot in pixels
-			    pointDotRadius : 2,
+			    pointDotRadius : 4,
 
 			    //Number - Pixel width of point dot stroke
 			    pointDotStrokeWidth : 1,
@@ -281,7 +244,7 @@ $(window).load(function() {
 
 			    responsive: true,
 
-			    maintainAspectRatio: false
+			    maintainAspectRatio: false,
 
 
 			};
@@ -366,7 +329,7 @@ $(window).load(function() {
 
 			    responsive: true,
 
-			    maintainAspectRatio: false
+			    maintainAspectRatio: false,
 
 
 			};
@@ -426,4 +389,3 @@ $(window).load(function() {
 
 
 	});
-

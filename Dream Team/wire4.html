@@ -9,12 +9,10 @@
     <meta name=viewport content="width=device-width, initial-scale=.8, minimum-scale = .8, user-scalable=yes">
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <script src="https://cdn.firebase.com/js/client/2.2.5/firebase.js"></script>
     <script src="./js/jquery-1.11.2.min.js"></script>
     <script src="./js/velocity.min.js"></script>
     <script src="./js/main.js"></script>
-    <script src="./js/additem.js"></script>
-    <title>New Item - CoinFlip</title>
+    <title>Gold Item - CoinFlip</title>
 </head>
 
 <body>
@@ -36,7 +34,7 @@
                         <use xlink:href="#icon-keyboard-arrow-left"></use>
                     </svg>
                 </a>
-                ADD ITEM
+                ITEM DETAIL
             </div>
             <div class="coin_main">
                 <a href="wire3.html">
@@ -48,7 +46,7 @@
                             </symbol>
                             <use xlink:href="#icon-play-arrow"></use>
                         </svg>
-                        Add Item
+                        Item Detail
                     </div>
                 </a>
                 <section class="coin_image">
@@ -60,74 +58,53 @@
                     <table>
                         <tr>
                             <td>Metal</td>
-                            <td>
-                                <select id = "new_metal">
-                                    <option value="gold">Gold</option>
-                                    <option value="silver">Silver</option>
-                                    <option value="platinum">Platinum</option>
-                                </select>
-                            </td>
+                            <td>Gold</td>
                         </tr>
                         <tr>
                             <td>Type</td>
-                            <td>
-                                <select id = "new_type">
-                                    <option selected value="US Eagle">US Eagle</option>
-                                    <option selected value="US Buffalo">US Buffalo</option>
-                                </select>
-                            </td>
+                            <td>US Eagle</td>
                         </tr>
                         <tr>
                             <td>Purchase Date</td>
-                            <td>
-                                <input id = "new_date" type = "date" name="purchase_date" />
-                            </td>
+                            <td>04 March 2015</td>
                         </tr>
                         <tr>
                             <td>Qty.</td>
-                            <td>
-                                <input id = "new_quantity" name="quantity" value="1" />
-                            </td>
+                            <td>1</td>
                         </tr>
                         <tr>
                             <td>Premium</td>
-                            <td>
-                                <input id = "new_prem" name="prem" value="47.00" />
-                            </td>
+                            <td>47.00</td>
                         </tr>
                         <tr>
                             <td>Unit Price</td>
-                            <td>
-                                <input id = "new_uprice" name="uprice" value="1250.60" />
-                            </td>
+                            <td>1250.60</td>
                         </tr>
                         <tr>
                             <td>Gold %</td>
-                            <td id = "new_goldp"></td>
+                            <td>0.999</td>
                         </tr>
                         <tr>
                             <td>Weight/unit (g)</td>
-                            <td id = "new_weight"></td>
+                            <td>1.244</td>
                         </tr>
                         <tr>
                             <td>Gold g/u</td>
-                            <td id = "new_goldg"></td>
+                            <td>1.244</td>
                         </tr>
                         <tr>
                             <td>Gold ozt/u</td>
-                            <td id = "new_goldozt"></td>
+                            <td>0.0400</td>
                         </tr>
                         <tr>
                             <td>Total au (ozt)</td>
-                            <td id = "new_totalau"></td>
+                            <td>0.0400</td>
                         </tr>
                         <tr>
                             <td><strong>TOTAL</strong></td>
                             <td><strong>1199.10</strong></td>
                         </tr>
                     </table>
-                    <a href="wire3.html"><span id="save">Save to My Stack</span>
-                    <a href="wire3.html"><span id="cancel">Cancel</span></a>
                 </section>
             </div>
         </section>
