@@ -12,7 +12,33 @@
     <script src="./js/jquery-1.11.2.min.js"></script>
     <script src="./js/velocity.min.js"></script>
     <script src="./js/main.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.2.5/firebase.js"></script>
+    <!-- Firebase -->
+
+<!-- Firebase Simple Login -->
+<script src="https://cdn.firebase.com/js/simple-login/1.6.2/firebase-simple-login.js"></script>
+
     <title>Login - CoinFlip</title>
+<script type="text/javascript">
+var ref = new Firebase("https://glaring-torch-6623.firebaseio.com");
+var auth = new FirebaseSimpleLogin(ref,function(error,user) {
+  if (error) {
+    console.log("Login Failed!", error);
+  } else {
+    // We'll never get here, as the page will redirect on success.
+  }
+  });
+    $(function() {
+        $("#fblogin").click(function() {
+            
+            auth.login("facebook", {
+            remember: "sessionOnly",
+            scope: "email,user_likes"
+             });
+        });
+    });
+   
+</script>
 </head>
 
 <body>
@@ -41,7 +67,7 @@
         </section>
 
     </div>
-
+<a href="#" id = "fblogin">Facebook</a>
     <script type="text/javascript">loadFooter();</script>
 </body>
 
