@@ -6,7 +6,6 @@ $(document).ready(function(){
     var type = $("#new_type").val();
     var myTypeRef = new Firebase("https://flickering-heat-2946.firebaseio.com/CoinType/Gold/" + type + "");
 
-
     myTypeRef.on('value', function(snapshot){
         var curr = snapshot.val();
 
@@ -32,7 +31,8 @@ $(document).ready(function(){
     });
 
     $("#save").click(function(){
-        var myFirebaseRef = new Firebase("https://flickering-heat-2946.firebaseio.com/User/Richard/Gold");
+        var myFirebaseRef = new Firebase("https://flickering-heat-2946.firebaseio.com");
+
         var metal = $("#new_metal").val();
         var type = $("#new_type").val();
         var date = $("#new_date").val();
@@ -42,9 +42,15 @@ $(document).ready(function(){
         var gold_percent = $("#new_goldp").html();
         var weight = $("#new_weight").html();
 
-        var newItem = myFirebaseRef.push();
 
-        newItem.set({Date: date, Goldp: gold_percent, Metal: metal, Premium: premium, Qty: quantity, Type: type, UnitPrice: unit_price, Weight: weight});
+        myFirebaseRef.onAuth(function(authData){
+            if (authData){
+                var newItem = myFirebaseRef.child("User").child(authData.uid).child("Gold").push();
+
+                newItem.set({Date: date, Goldp: gold_percent, Metal: metal, Premium: premium, Qty: quantity, Type: type, UnitPrice: unit_price, Weight: weight});
+            }
+        });
+
     });
 
     $("#new_type").change(function(){

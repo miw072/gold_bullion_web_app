@@ -3,8 +3,15 @@
  */
 $(document).ready(function(){
     $(window).load(function(){
+
         var myFirebaseRef = new Firebase("https://flickering-heat-2946.firebaseio.com/");
-        myFirebaseRef.child("User/Richard/Gold").on("value", function(dataSnapshot) {
+        var user = null;
+        myFirebaseRef.onAuth(function(authData){
+            if (authData){
+                user = authData.uid;
+            }
+        });
+        myFirebaseRef.child("User/" + user + "/Gold").on("value", function(dataSnapshot) {
             dataSnapshot.forEach(function(childSnapshot){
                 $("#item_list").append("<tr id = '" + childSnapshot.key() + "'></tr>");
                 $("#" + childSnapshot.key() + "").append("<td class='stack_img_col'><div class='coin_mini'></div></td>");
