@@ -4,6 +4,7 @@
 
 $(document).ready(function(){
 
+
     $("#edit_save").click(function(){
 
         var query = window.location.search;
@@ -14,8 +15,9 @@ $(document).ready(function(){
                 var quantity = $("#Qty").val();
                 var premium = $("#Premium").val();
                 var unit_price = $("#UnitPrice").val();
+                var metal = $("Metal").val();
 
-                myFirebaseRef.child("User").child(authData.uid).child("Gold").child(id).update({Premium: premium, Qty: quantity, UnitPrice: unit_price});
+                myFirebaseRef.child("User").child(authData.uid).child(metal).child(id).update({Premium: premium, Qty: quantity, UnitPrice: unit_price});
             }
         });
 
@@ -27,7 +29,8 @@ $(document).ready(function(){
         var myFirebaseRef = new Firebase("https://flickering-heat-2946.firebaseio.com");
         myFirebaseRef.onAuth(function(authData){
             if (authData){
-                myFirebaseRef.child("User").child(authData.uid).child("Gold").child(id).remove();
+                var metal = $("Metal").val();
+                myFirebaseRef.child("User").child(authData.uid).child(metal).child(id).remove();
             }
         });
     });
@@ -35,10 +38,14 @@ $(document).ready(function(){
     var query = window.location.search;
     var id = query.split("?")[1];
     var myFirebaseRef = new Firebase("https://flickering-heat-2946.firebaseio.com");
+    var metal_string = sessionStorage.metal;
+    
+
 
     myFirebaseRef.onAuth(function(authData){
         if (authData){
-            myFirebaseRef.child("User").child(authData.uid).child("Gold").child(id).on('value', function(snapshot){
+
+            myFirebaseRef.child("User").child(authData.uid).child(metal_string).child(id).on('value', function(snapshot){
                 var curr = snapshot.val();
                 var type = curr.Type;
 
@@ -47,7 +54,7 @@ $(document).ready(function(){
                 $("#Date").append(curr.Date);
 
 
-                var myTypeRef = new Firebase("https://flickering-heat-2946.firebaseio.com/CoinType/Gold/" + type + "");
+                var myTypeRef = new Firebase("https://flickering-heat-2946.firebaseio.com/CoinType/"+ metal_string + "/" + type + "");
 
 
                 myTypeRef.on('value', function(snapshot){
@@ -86,6 +93,8 @@ $(document).ready(function(){
             });
         }
     });
+
+
 
 });
 
