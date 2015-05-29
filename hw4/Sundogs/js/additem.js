@@ -55,7 +55,7 @@ $(document).ready(function(){
                 $("#new_type").val(""+childSnapshot.key()+"");
             });
             var type = $("#new_type").val();
-            
+
             var myTypeRef = new Firebase("https://flickering-heat-2946.firebaseio.com/CoinType/" + metal + "/" + type + "");
 
 
