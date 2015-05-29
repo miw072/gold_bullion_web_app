@@ -58,7 +58,7 @@ function loadSideNav(selected){
 	document.write("            <figcaption>Home<\/figcaption>");
 	document.write("        <\/figure>       ");
 	document.write("        <\/a> ");
-	document.write("        <a href=\"wire3.html\">");
+	document.write("        <a href=\"wire3.html?1\">");
 	if(selected == 1)
 		document.write("        <figure class='nav-selected'>");
 	else
@@ -67,7 +67,7 @@ function loadSideNav(selected){
 	document.write("            <figcaption>My Gold<\/figcaption>");
 	document.write("        <\/figure>       ");
 	document.write("        <\/a> ");
-	document.write("        <a href=\"wire3.html\">");
+	document.write("        <a href=\"wire3.html?2\">");
 	if(selected == 2)
 		document.write("        <figure class='nav-selected'>");
 	else
@@ -76,7 +76,7 @@ function loadSideNav(selected){
 	document.write("            <figcaption>My Silver<\/figcaption>");
 	document.write("        <\/figure>       ");
 	document.write("        <\/a> ");
-	document.write("        <a href=\"wire3.html\">");
+	document.write("        <a href=\"wire3.html?3\">");
 	if(selected == 3)
 		document.write("        <figure class='nav-selected'>");
 	else

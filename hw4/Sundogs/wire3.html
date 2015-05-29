@@ -22,7 +22,9 @@
     loadTopNav();
     </script>
     <script type="text/javascript">
-    loadSideNav(1);
+        var query = window.location.search;
+        var metal_id = query.split("?")[1];
+        loadSideNav(metal_id);
     </script>
     <section class="main-section">
         <section class="coin_wrapper">
