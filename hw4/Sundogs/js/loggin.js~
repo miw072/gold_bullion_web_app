@@ -23,7 +23,7 @@ $(function () {
     }
 
     function handleAuthResponse(promise) {
-
+alert("1");
         $.when(promise)
             .then(function (authData) {
 
@@ -33,6 +33,7 @@ $(function () {
                 console.log(err);
                 // pop up error
                // alert("error");
+alert("2");
             });
     }
 
