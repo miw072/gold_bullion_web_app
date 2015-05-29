@@ -39,7 +39,7 @@ $(document).ready(function(){
     var id = query.split("?")[1];
     var myFirebaseRef = new Firebase("https://flickering-heat-2946.firebaseio.com");
     var metal_string = sessionStorage.metal;
-    
+
 
 
     myFirebaseRef.onAuth(function(authData){
