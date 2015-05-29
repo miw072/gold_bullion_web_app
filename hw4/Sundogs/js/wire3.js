@@ -3,6 +3,21 @@
  */
 $(document).ready(function(){
     $(window).load(function(){
+        var query = window.location.search;
+        var metal_id = query.split("?")[1];
+        var metal_string = null;
+        switch (metal_id)
+        {
+            case "1" : metal_string = "Gold";
+                     break;
+            case "2" : metal_string = "Silver";
+                     break;
+            case "3" : metal_string = "Platinum";
+                     break;
+            default  : break;
+        }
+
+        sessionStorage.metal = metal_string;
 
         var myFirebaseRef = new Firebase("https://flickering-heat-2946.firebaseio.com/");
         var user = null;
@@ -11,7 +26,7 @@ $(document).ready(function(){
                 user = authData.uid;
             }
         });
-        myFirebaseRef.child("User/" + user + "/Gold").on("value", function(dataSnapshot) {
+        myFirebaseRef.child("User/" + user + "/" + metal_string).on("value", function(dataSnapshot) {
             dataSnapshot.forEach(function(childSnapshot){
                 $("#item_list").append("<tr id = '" + childSnapshot.key() + "'></tr>");
                 $("#" + childSnapshot.key() + "").append("<td class='stack_img_col'><div class='coin_mini'></div></td>");

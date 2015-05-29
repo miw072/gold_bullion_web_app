@@ -3,32 +3,90 @@
  */
 $(document).ready(function(){
 
-    var type = $("#new_type").val();
-    var myTypeRef = new Firebase("https://flickering-heat-2946.firebaseio.com/CoinType/Gold/" + type + "");
+    var metal = sessionStorage.metal;
+    $("#new_metal").val(""+metal+"");
 
-    myTypeRef.on('value', function(snapshot){
-        var curr = snapshot.val();
+    var myMetalRef = new Firebase("https://flickering-heat-2946.firebaseio.com/CoinType/");
+    myMetalRef.child(metal).on('value', function (dataSnapshot) {
+        $("#new_type").empty();
+        dataSnapshot.forEach(function(childSnapshot){
+            $("#new_type").append("<option value = '" + childSnapshot.key() + "'>" +  childSnapshot.key() + "</option>");
+            $("#new_type").val(""+childSnapshot.key()+"");
+        });
+        var type = $("#new_type").val();
 
-        var goldp = curr.Goldp;
-        var goldozt = curr.Goldozt;
-        var goldg = curr.Goldg;
-        var weight = curr.Weight;
-        var totalau = goldozt * $("#new_quantity").val();
+        var myTypeRef = new Firebase("https://flickering-heat-2946.firebaseio.com/CoinType/"+ metal + "/" + type + "");
 
-        $("#new_goldg").empty();
-        $("#new_goldp").empty();
-        $("#new_goldozt").empty();
-        $("#new_weight").empty();
-        $("#new_totalau").empty();
+        myTypeRef.on('value', function(snapshot){
+            var curr = snapshot.val();
+
+            var goldp = curr.Goldp;
+            var goldozt = curr.Goldozt;
+            var goldg = curr.Goldg;
+            var weight = curr.Weight;
+            var totalau = goldozt * $("#new_quantity").val();
+
+            $("#new_goldg").empty();
+            $("#new_goldp").empty();
+            $("#new_goldozt").empty();
+            $("#new_weight").empty();
+            $("#new_totalau").empty();
+
+            $("#new_goldg").append(goldg);
+            $("#new_goldp").append(goldp);
+            $("#new_goldozt").append(goldozt);
+            $("#new_weight").append(weight);
+            $("#new_totalau").append(totalau);
+
+        });
+    });
 
 
-        $("#new_goldg").append(goldg);
-        $("#new_goldp").append(goldp);
-        $("#new_goldozt").append(goldozt);
-        $("#new_weight").append(weight);
-        $("#new_totalau").append(totalau);
+
+    $("#new_metal").change(function(){
+        var metal = $("#new_metal").val();
+
+        var myMetalRef = new Firebase("https://flickering-heat-2946.firebaseio.com/CoinType/");
+
+        myMetalRef.child(metal).on('value', function (dataSnapshot) {
+            $("#new_type").empty();
+            dataSnapshot.forEach(function(childSnapshot){
+                $("#new_type").append("<option selected value='" + childSnapshot.key() + "'>" + childSnapshot.key() + "</option>");
+                $("#new_type").val(""+childSnapshot.key()+"");
+            });
+            var type = $("#new_type").val();
+
+            var myTypeRef = new Firebase("https://flickering-heat-2946.firebaseio.com/CoinType/" + metal + "/" + type + "");
+
+
+            myTypeRef.on('value', function(snapshot){
+                var curr = snapshot.val();
+
+                var goldp = curr.Goldp;
+                var goldozt = curr.Goldozt;
+                var goldg = curr.Goldg;
+                var weight = curr.Weight;
+                var totalau = goldozt * $("#new_quantity").val();
+
+                $("#new_goldg").empty();
+                $("#new_goldp").empty();
+                $("#new_goldozt").empty();
+                $("#new_weight").empty();
+                $("#new_totalau").empty();
+
+
+                $("#new_goldg").append(goldg);
+                $("#new_goldp").append(goldp);
+                $("#new_goldozt").append(goldozt);
+                $("#new_weight").append(weight);
+                $("#new_totalau").append(totalau);
+
+            });
+        });
+
 
     });
+
 
     $("#save").click(function(){
         var myFirebaseRef = new Firebase("https://flickering-heat-2946.firebaseio.com");
@@ -45,7 +103,7 @@ $(document).ready(function(){
 
         myFirebaseRef.onAuth(function(authData){
             if (authData){
-                var newItem = myFirebaseRef.child("User").child(authData.uid).child("Gold").push();
+                var newItem = myFirebaseRef.child("User").child(authData.uid).child(metal).push();
 
                 newItem.set({Date: date, Goldp: gold_percent, Metal: metal, Premium: premium, Qty: quantity, Type: type, UnitPrice: unit_price, Weight: weight});
             }
@@ -56,7 +114,8 @@ $(document).ready(function(){
     $("#new_type").change(function(){
 
         var type = $("#new_type").val();
-        var myTypeRef = new Firebase("https://flickering-heat-2946.firebaseio.com/CoinType/Gold/" + type + "");
+        var metal = $("#new_metal").val();
+        var myTypeRef = new Firebase("https://flickering-heat-2946.firebaseio.com/CoinType/"  + metal + "/" + type + "");
 
 
         myTypeRef.on('value', function(snapshot){
@@ -86,7 +145,9 @@ $(document).ready(function(){
 
     $("#new_quantity").keyup(function(){
         var type = $("#new_type").val();
-        var myTypeRef = new Firebase("https://flickering-heat-2946.firebaseio.com/CoinType/Gold/" + type + "");
+        var metal = $("#new_metal").val();
+
+        var myTypeRef = new Firebase("https://flickering-heat-2946.firebaseio.com/CoinType/" + metal + "/" + type + "");
 
         myTypeRef.on('value', function(snapshot){
             var curr = snapshot.val();
