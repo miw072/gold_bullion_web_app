@@ -40,6 +40,15 @@ var auth = new FirebaseSimpleLogin(ref,function(error,user) {
              });
         });
     });
+    $(function() {
+        $("#gglogin").click(function() {
+            
+            auth.login("google", {
+            remember: "sessionOnly",
+            scope: "email"
+             });
+        });
+    });
    
 
         $(document).ready(function($) {
@@ -118,6 +127,7 @@ var auth = new FirebaseSimpleLogin(ref,function(error,user) {
 
     </div>
 <a href="#" id = "fblogin">Facebook</a>
+<a href="#" id = "gglogin">Google</a>
     <script type="text/javascript">loadFooter();</script>
 </body>
 
