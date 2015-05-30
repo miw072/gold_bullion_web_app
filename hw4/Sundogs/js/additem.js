@@ -30,7 +30,7 @@ $(document).ready(function(){
             var myDataRef = new Firebase("https://flickering-heat-2946.firebaseio.com/Data/" + metal + "/0/1");
             myDataRef.on('value', function(snapshot){
                 var goldPrice = snapshot.val();
-                var total = goldPrice * weight * goldp * $("#new_quantity").val();
+                var total = uprice * $("#new_quantity").val();
                 $("#total").empty();
                 $("#total").append(total.toPrecision(6));
             });
@@ -84,7 +84,7 @@ $(document).ready(function(){
                 var myDataRef = new Firebase("https://flickering-heat-2946.firebaseio.com/Data/" + metal + "/0/1");
                 myDataRef.on('value', function(snapshot){
                     var goldPrice = snapshot.val();
-                    var total = goldPrice * weight * goldp * $("#new_quantity").val();
+                    var total = uprice * $("#new_quantity").val();
                     $("#total").empty();
                     $("#total").append(total.toPrecision(6));
                 });
@@ -154,7 +154,7 @@ $(document).ready(function(){
             var myDataRef = new Firebase("https://flickering-heat-2946.firebaseio.com/Data/" + metal + "/0/1");
             myDataRef.on('value', function(snapshot){
                 var goldPrice = snapshot.val();
-                var total = goldPrice * weight * goldp * $("#new_quantity").val();
+                var total = uprice * $("#new_quantity").val();
                 $("#total").empty();
                 $("#total").append(total.toPrecision(6));
             });
@@ -188,6 +188,7 @@ $(document).ready(function(){
 
             var weight = curr.Weight;
             var goldp = curr.Goldp;
+            var uprice = curr.Uprice;
             var goldozt = curr.Goldozt;
             var totalau = goldozt * $("#new_quantity").val();
 
@@ -195,7 +196,7 @@ $(document).ready(function(){
             var myDataRef = new Firebase("https://flickering-heat-2946.firebaseio.com/Data/" + metal + "/0/1");
             myDataRef.on('value', function(snapshot){
                 var goldPrice = snapshot.val();
-                var total = goldPrice * weight * goldp * $("#new_quantity").val();
+                var total = uprice * $("#new_quantity").val();
                 $("#total").empty();
                 $("#total").append(total.toPrecision(6));
             });

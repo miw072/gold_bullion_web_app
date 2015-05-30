@@ -99,9 +99,11 @@ function loadFooter(){
 
 $(window).load(function() {
 
-	var path = window.location.search;
-	var page = path.split("?")[1];
-
+	var path = window.location.pathname;
+	var parameter= window.location.search;
+	var page_name = path.split("/").pop();
+	var page_parameter = parameter.split("?").pop();
+	
 
 	/* * * * * * * * * * * * * *
 	 *                         *
@@ -152,7 +154,7 @@ $(window).load(function() {
  		var pointHighlightFill = "#fff";
  		var pointHighlightStroke = "#fff";
 
- 		if(page == null) {
+ 		if(page_name == "wire2.html") {
 
  			var data = {
  				labels: goldV[0],
@@ -278,7 +280,7 @@ $(window).load(function() {
 			var coinChart = new Chart(ctx).Line(data,options);
 			coinChart.update();
 		}
-		else if(page =="1"){
+		else if(page_name == "wire3.html" && page_parameter == "1"){
 			var data = {
 				labels: goldV[0],
 				datasets: [
@@ -363,7 +365,7 @@ $(window).load(function() {
 			var coinChart = new Chart(ctx).Line(data,options);
 			coinChart.update();
 		}
-		else if(page =="2"){
+		else if(page_name == "wire3.html" && page_parameter == "2"){
 			var data = {
 				labels: goldV[0],
 				datasets: [
@@ -448,7 +450,7 @@ $(window).load(function() {
 			var coinChart = new Chart(ctx).Line(data,options);
 			coinChart.update();
 		}
-		else if(page =="3"){
+		else if(page_name == "wire3.html" && page_parameter == "3"){
 			var data = {
 				labels: goldV[0],
 				datasets: [

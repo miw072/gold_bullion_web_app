@@ -32,12 +32,13 @@ $(document).ready(function(){
                     var goldozt = curr.Goldozt;
                     var goldg = curr.Goldg;
                     var weight = curr.Weight;
+                    var uprice = curr.Uprice;
                     var totalau = goldozt * $("#Qty").val();
 
                     var myDataRef = new Firebase("https://flickering-heat-2946.firebaseio.com/Data/" + metal_string + "/0/1");
                     myDataRef.on('value', function(snapshot){
                         var goldPrice = snapshot.val();
-                        var total = goldPrice * weight * goldp * $("#Qty").val();
+                        var total = uprice * $("#Qty").val();
                         $("#Total").empty();
                         $("#Total").append(total.toPrecision(6));
                     });
@@ -61,11 +62,12 @@ $(document).ready(function(){
                         var weight = curr.Weight;
                         var goldp = curr.Goldp;
                         var totalau = goldozt * $("#Qty").val();
+                        var uprice = curr.Uprice;
 
                         var myDataRef = new Firebase("https://flickering-heat-2946.firebaseio.com/Data/" + metal_string + "/0/1");
                         myDataRef.on('value', function(snapshot){
                             var goldPrice = snapshot.val();
-                            var total = goldPrice * weight * goldp * $("#Qty").val();
+                            var total = uprice * $("#Qty").val();
                             $("#Total").empty();
                             $("#Total").append(total.toPrecision(6));
                         });
