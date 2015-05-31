@@ -34,23 +34,22 @@
             })
                     .done(function( csvdata ) {
                         var jsonAB = eval(csvdata);
-                        //csvdata += jsonAB[i].symbol+" prices for "+ new Date(jsonAB[3].timestamp*1000).toISOString().slice(0, 10)+":\n";
                         if (jsonAB[0].oneDayPercentChange >= 0){
                             $("#gold_change").attr("class", "pos-change");
-                            $("#gold_change").html("+" + jsonAB[0].oneDayPercentChange);
+                            $("#gold_change").html("+" + jsonAB[0].oneDayPercentChange.toPrecision(2) + "%");
                         }else{
                             $("#gold_change").attr("class", "neg-change");
-                            $("#gold_change").html(jsonAB[0].oneDayPercentChange);
+                            $("#gold_change").html(jsonAB[0].oneDayPercentChange.toPrecision(2) + "%");
                         }
                         $("#gold_bid").html(jsonAB[0].bid);
                         $("#gold_ask").html(jsonAB[0].ask);
 
                         if (jsonAB[1].oneDayPercentChange >= 0){
                             $("#silver_change").attr("class", "pos-change");
-                            $("#silver_change").html("+" + jsonAB[1].oneDayPercentChange);
+                            $("#silver_change").html("+" + jsonAB[1].oneDayPercentChange.toPrecision(2) + "%");
                         }else{
                             $("#silver_change").attr("class", "neg-change");
-                            $("#silver_change").html(jsonAB[1].oneDayPercentChange);
+                            $("#silver_change").html(jsonAB[1].oneDayPercentChange.toPrecision(2) + "%");
                         }
                         $("#silver_bid").html(jsonAB[1].bid);
                         $("#silver_ask").html(jsonAB[1].ask);
@@ -58,10 +57,10 @@
 
                         if (jsonAB[2].oneDayPercentChange >= 0){
                             $("#platinum_change").attr("class", "pos-change");
-                            $("#platinum_change").html("+" + jsonAB[2].oneDayPercentChange);
+                            $("#platinum_change").html("+" + jsonAB[2].oneDayPercentChange.toPrecision(2) + "%");
                         }else{
                             $("#platinum_change").attr("class", "neg-change");
-                            $("#platinum_change").html(jsonAB[2].oneDayPercentChange);
+                            $("#platinum_change").html(jsonAB[2].oneDayPercentChange.toPrecision(2) + "%");
                         }
                         $("#platinum_bid").html(jsonAB[2].bid);
                         $("#platinum_ask").html(jsonAB[2].ask);

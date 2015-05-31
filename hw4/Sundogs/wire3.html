@@ -25,7 +25,92 @@
         var query = window.location.search;
         var metal_id = query.split("?")[1];
         loadSideNav(metal_id);
+        function getAskBids(){
+            $.ajax({
+                type: "GET",
+                dataType: 'text',
+                url: "https://cse134b.herokuapp.com/jm",
+                crossDomain : true,
+                xhrFields: {
+                    withCredentials: false
+                }
+            })
+                    .done(function( csvdata ) {
+                        var jsonAB = eval(csvdata);
+                        if (metal_id == 1) {
+                            if (jsonAB[0].oneDayPercentChange >= 0) {
+                                $("#change").attr("class", "pos-change");
+                                $("#change").html("+" + jsonAB[0].oneDayPercentChange.toPrecision(2) + "%");
+                                $("#daily").attr("class", "pos-change");
+                                $("#daily").html("+" + jsonAB[0].oneDayPercentChange.toPrecision(2) + "%");
+                            } else {
+                                $("#change").attr("class", "neg-change");
+                                $("#change").html(jsonAB[0].oneDayPercentChange.toPrecision(2) + "%");
+                                $("#daily").attr("class", "neg-change");
+                                $("#daily").html(jsonAB[0].oneDayPercentChange.toPrecision(2) + "%");
+                            }
+                            if (jsonAB[0].fiftyTwoWeekPercentChange >= 0){
+                                $("#overall").attr("class", "pos-change");
+                                $("#overall").html("+" + jsonAB[0].fiftyTwoWeekPercentChange.toPrecision(2) + "%");
+                            }else{
+                                $("#overall").attr("class", "neg-change");
+                                $("#overall").html(jsonAB[0].fiftyTwoWeekPercentChange.toPrecision(2) + "%");
+                            }
+                            $("#bid").html(jsonAB[0].bid);
+                            $("#ask").html(jsonAB[0].ask);
+                        }else if (metal_id == 2) {
+                            if (jsonAB[1].oneDayPercentChange >= 0) {
+                                $("#change").attr("class", "pos-change");
+                                $("#change").html("+" + jsonAB[1].oneDayPercentChange.toPrecision(2) + "%");
+                                $("#daily").attr("class", "pos-change");
+                                $("#daily").html("+" + jsonAB[1].oneDayPercentChange.toPrecision(2) + "%");
+                            } else {
+                                $("#change").attr("class", "neg-change");
+                                $("#change").html(jsonAB[1].oneDayPercentChange.toPrecision(2) + "%");
+                                $("#daily").attr("class", "neg-change");
+                                $("#daily").html(jsonAB[1].oneDayPercentChange.toPrecision(2) + "%");
+                            }
+                            if (jsonAB[1].fiftyTwoWeekPercentChange >= 0){
+                                $("#overall").attr("class", "pos-change");
+                                $("#overall").html("+" + jsonAB[1].fiftyTwoWeekPercentChange.toPrecision(2) + "%");
+                            }else{
+                                $("#overall").attr("class", "neg-change");
+                                $("#overall").html(jsonAB[1].fiftyTwoWeekPercentChange.toPrecision(2) + "%");
+                            }
+                            $("#bid").html(jsonAB[1].bid);
+                            $("#ask").html(jsonAB[1].ask);
+                        }else if (metal_id == 3) {
+                            if (jsonAB[2].oneDayPercentChange >= 0) {
+                                $("#change").attr("class", "pos-change");
+                                $("#change").html("+" + jsonAB[2].oneDayPercentChange.toPrecision(2) + "%");
+                                $("#daily").attr("class", "pos-change");
+                                $("#daily").html("+" + jsonAB[2].oneDayPercentChange.toPrecision(2) + "%");
+                            } else {
+                                $("#change").attr("class", "neg-change");
+                                $("#change").html(jsonAB[2].oneDayPercentChange.toPrecision(2) + "%");
+                                $("#daily").attr("class", "neg-change");
+                                $("#daily").html(jsonAB[2].oneDayPercentChange.toPrecision(2) + "%");
+                            }
+                            if (jsonAB[2].fiftyTwoWeekPercentChange >= 0){
+                                $("#overall").attr("class", "pos-change");
+                                $("#overall").html("+" + jsonAB[2].fiftyTwoWeekPercentChange.toPrecision(2) + "%");
+                            }else{
+                                $("#overall").attr("class", "neg-change");
+                                $("#overall").html(jsonAB[2].fiftyTwoWeekPercentChange.toPrecision(2) + "%");
+                            }
+                            $("#bid").html(jsonAB[2].bid);
+                            $("#ask").html(jsonAB[2].ask);
+                        }
+                    })
+                    .fail( function(xhr, textStatus, errorThrown) {
+                        alert(xhr.responseText);
+                        alert(textStatus);
+                    });
+        }
+        getAskBids();
     </script>
+
+
     <section class="main-section">
         <section class="coin_wrapper">
             <div class="mobile-nav">
@@ -92,9 +177,9 @@
                     <section class="market-item-stats">
                         <table>
                             <tr>
-                                <td>1206.10</td>
-                                <td>1207.10</td>
-                                <td class="pos-change">+23.40</td>
+                                <td id = "bid"></td>
+                                <td id = "ask"></td>
+                                <td id = "change"></td>
                             </tr>
                             <tr>
                                 <td>Bid</td>

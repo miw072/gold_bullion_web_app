@@ -201,8 +201,6 @@ $(window).load(function() {
 				}
 			});
 		});
-
-
 	}
 
 
