@@ -8,13 +8,17 @@ $(document).ready(function(){
     switch (metal_id)
     {
         case "1" : metal_string = "Gold";
-            break;
+                   $("#my_gold_value").text("My Gold Value");
+                   break;
         case "2" : metal_string = "Silver";
-            break;
+                   $("#my_gold_value").text("My Silver Value");
+                   break;
         case "3" : metal_string = "Platinum";
-            break;
+                   $("#my_gold_value").text("My Platinum Value");
+                   break;
         default  : break;
     }
+
 
     sessionStorage.metal = metal_string;
 

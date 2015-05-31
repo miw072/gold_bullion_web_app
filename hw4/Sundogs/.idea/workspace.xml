@@ -25,7 +25,7 @@
         <entry file="file://$PROJECT_DIR$/wire3.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="61" column="47" selection-start-line="61" selection-start-column="47" selection-end-line="61" selection-end-column="47" />
+              <caret line="64" column="62" selection-start-line="64" selection-start-column="49" selection-end-line="64" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -34,9 +34,27 @@
       <file leaf-file-name="wire2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wire2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="30" column="67" selection-start-line="30" selection-start-column="67" selection-end-line="30" selection-end-column="67" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#section#0;n#section#0;n#section#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.0216509">
+              <caret line="163" column="67" selection-start-line="163" selection-start-column="67" selection-end-line="163" selection-end-column="67" />
+              <folding>
+                <marker date="1433039515284" expanded="true" signature="2285:2321" placeholder="..." />
+                <marker date="1433039515284" expanded="true" signature="14707:14752" placeholder="..." />
+                <marker date="1433039515284" expanded="true" signature="17288:17333" placeholder="..." />
+                <marker date="1433039515284" expanded="true" signature="19873:19918" placeholder="..." />
+                <marker date="1433039515284" expanded="true" signature="22462:22507" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -55,7 +73,7 @@
         <entry file="file://$PROJECT_DIR$/wire5.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="80" column="92" selection-start-line="80" selection-start-column="32" selection-end-line="80" selection-end-column="92" />
+              <caret line="125" column="20" selection-start-line="125" selection-start-column="20" selection-end-line="125" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -77,7 +95,7 @@
         <entry file="file://$PROJECT_DIR$/js/additem.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+              <caret line="128" column="98" selection-start-line="128" selection-start-column="98" selection-end-line="128" selection-end-column="98" />
               <folding>
                 <element signature="e#0#44#0" expanded="false" />
               </folding>
@@ -89,25 +107,9 @@
         <entry file="file://$PROJECT_DIR$/js/wire3.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="54" column="3" selection-start-line="54" selection-start-column="3" selection-end-line="54" selection-end-column="3" />
+              <caret line="31" column="44" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="44" />
               <folding>
                 <element signature="e#0#44#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
-              <folding>
-                <marker date="1433025612451" expanded="true" signature="2285:2321" placeholder="..." />
-                <marker date="1433025612451" expanded="true" signature="11706:11751" placeholder="..." />
-                <marker date="1433025612451" expanded="true" signature="14287:14332" placeholder="..." />
-                <marker date="1433025612451" expanded="true" signature="16872:16917" placeholder="..." />
-                <marker date="1433025612451" expanded="true" signature="19461:19506" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -138,14 +140,14 @@
       <list>
         <option value="$PROJECT_DIR$/gold_edit.html" />
         <option value="$PROJECT_DIR$/wire3_silver.html" />
-        <option value="$PROJECT_DIR$/wire2.html" />
-        <option value="$PROJECT_DIR$/wire5.html" />
         <option value="$PROJECT_DIR$/edit.html" />
         <option value="$PROJECT_DIR$/style/style.css" />
+        <option value="$PROJECT_DIR$/js/database.js" />
         <option value="$PROJECT_DIR$/wire3.html" />
         <option value="$PROJECT_DIR$/js/wire3.js" />
         <option value="$PROJECT_DIR$/js/additem.js" />
-        <option value="$PROJECT_DIR$/js/database.js" />
+        <option value="$PROJECT_DIR$/wire5.html" />
+        <option value="$PROJECT_DIR$/wire2.html" />
         <option value="$PROJECT_DIR$/js/main.js" />
       </list>
     </option>
@@ -187,7 +189,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -236,6 +237,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -332,25 +334,25 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.120625" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32985657" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -394,11 +396,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1433025612451" expanded="true" signature="2285:2321" placeholder="..." />
-            <marker date="1433025612451" expanded="true" signature="11706:11751" placeholder="..." />
-            <marker date="1433025612451" expanded="true" signature="14287:14332" placeholder="..." />
-            <marker date="1433025612451" expanded="true" signature="16872:16917" placeholder="..." />
-            <marker date="1433025612451" expanded="true" signature="19461:19506" placeholder="..." />
+            <marker date="1433039515284" expanded="true" signature="2285:2321" placeholder="..." />
+            <marker date="1433039515284" expanded="true" signature="14707:14752" placeholder="..." />
+            <marker date="1433039515284" expanded="true" signature="17288:17333" placeholder="..." />
+            <marker date="1433039515284" expanded="true" signature="19873:19918" placeholder="..." />
+            <marker date="1433039515284" expanded="true" signature="22462:22507" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -426,11 +428,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="116" column="36" selection-start-line="116" selection-start-column="36" selection-end-line="116" selection-end-column="36" />
           <folding>
-            <marker date="1433025612451" expanded="true" signature="2285:2321" placeholder="..." />
-            <marker date="1433025612451" expanded="true" signature="11706:11751" placeholder="..." />
-            <marker date="1433025612451" expanded="true" signature="14287:14332" placeholder="..." />
-            <marker date="1433025612451" expanded="true" signature="16872:16917" placeholder="..." />
-            <marker date="1433025612451" expanded="true" signature="19461:19506" placeholder="..." />
+            <marker date="1433039515284" expanded="true" signature="2285:2321" placeholder="..." />
+            <marker date="1433039515284" expanded="true" signature="14707:14752" placeholder="..." />
+            <marker date="1433039515284" expanded="true" signature="17288:17333" placeholder="..." />
+            <marker date="1433039515284" expanded="true" signature="19873:19918" placeholder="..." />
+            <marker date="1433039515284" expanded="true" signature="22462:22507" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -488,11 +490,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="116" column="36" selection-start-line="116" selection-start-column="36" selection-end-line="116" selection-end-column="36" />
           <folding>
-            <marker date="1433025612451" expanded="true" signature="2285:2321" placeholder="..." />
-            <marker date="1433025612451" expanded="true" signature="11706:11751" placeholder="..." />
-            <marker date="1433025612451" expanded="true" signature="14287:14332" placeholder="..." />
-            <marker date="1433025612451" expanded="true" signature="16872:16917" placeholder="..." />
-            <marker date="1433025612451" expanded="true" signature="19461:19506" placeholder="..." />
+            <marker date="1433039515284" expanded="true" signature="2285:2321" placeholder="..." />
+            <marker date="1433039515284" expanded="true" signature="14707:14752" placeholder="..." />
+            <marker date="1433039515284" expanded="true" signature="17288:17333" placeholder="..." />
+            <marker date="1433039515284" expanded="true" signature="19873:19918" placeholder="..." />
+            <marker date="1433039515284" expanded="true" signature="22462:22507" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -550,11 +552,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="116" column="36" selection-start-line="116" selection-start-column="36" selection-end-line="116" selection-end-column="36" />
           <folding>
-            <marker date="1433025612451" expanded="true" signature="2285:2321" placeholder="..." />
-            <marker date="1433025612451" expanded="true" signature="11706:11751" placeholder="..." />
-            <marker date="1433025612451" expanded="true" signature="14287:14332" placeholder="..." />
-            <marker date="1433025612451" expanded="true" signature="16872:16917" placeholder="..." />
-            <marker date="1433025612451" expanded="true" signature="19461:19506" placeholder="..." />
+            <marker date="1433039515284" expanded="true" signature="2285:2321" placeholder="..." />
+            <marker date="1433039515284" expanded="true" signature="14707:14752" placeholder="..." />
+            <marker date="1433039515284" expanded="true" signature="17288:17333" placeholder="..." />
+            <marker date="1433039515284" expanded="true" signature="19873:19918" placeholder="..." />
+            <marker date="1433039515284" expanded="true" signature="22462:22507" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -612,11 +614,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="116" column="36" selection-start-line="116" selection-start-column="36" selection-end-line="116" selection-end-column="36" />
           <folding>
-            <marker date="1433025612451" expanded="true" signature="2285:2321" placeholder="..." />
-            <marker date="1433025612451" expanded="true" signature="11706:11751" placeholder="..." />
-            <marker date="1433025612451" expanded="true" signature="14287:14332" placeholder="..." />
-            <marker date="1433025612451" expanded="true" signature="16872:16917" placeholder="..." />
-            <marker date="1433025612451" expanded="true" signature="19461:19506" placeholder="..." />
+            <marker date="1433039515284" expanded="true" signature="2285:2321" placeholder="..." />
+            <marker date="1433039515284" expanded="true" signature="14707:14752" placeholder="..." />
+            <marker date="1433039515284" expanded="true" signature="17288:17333" placeholder="..." />
+            <marker date="1433039515284" expanded="true" signature="19873:19918" placeholder="..." />
+            <marker date="1433039515284" expanded="true" signature="22462:22507" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -685,11 +687,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="251" column="33" selection-start-line="251" selection-start-column="33" selection-end-line="251" selection-end-column="33" />
           <folding>
-            <marker date="1433025612451" expanded="true" signature="2285:2321" placeholder="..." />
-            <marker date="1433025612451" expanded="true" signature="11706:11751" placeholder="..." />
-            <marker date="1433025612451" expanded="true" signature="14287:14332" placeholder="..." />
-            <marker date="1433025612451" expanded="true" signature="16872:16917" placeholder="..." />
-            <marker date="1433025612451" expanded="true" signature="19461:19506" placeholder="..." />
+            <marker date="1433039515284" expanded="true" signature="2285:2321" placeholder="..." />
+            <marker date="1433039515284" expanded="true" signature="14707:14752" placeholder="..." />
+            <marker date="1433039515284" expanded="true" signature="17288:17333" placeholder="..." />
+            <marker date="1433039515284" expanded="true" signature="19873:19918" placeholder="..." />
+            <marker date="1433039515284" expanded="true" signature="22462:22507" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -738,42 +740,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/style/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.8619757">
           <caret line="996" column="9" selection-start-line="996" selection-start-column="9" selection-end-line="996" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wire3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="61" column="47" selection-start-line="61" selection-start-column="47" selection-end-line="61" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wire2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wire5.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="80" column="92" selection-start-line="80" selection-start-column="32" selection-end-line="80" selection-end-column="92" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -785,23 +755,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/wire3.js">
+    <entry file="file://$PROJECT_DIR$/wire3.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="54" column="3" selection-start-line="54" selection-start-column="3" selection-end-line="54" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#44#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/additem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#44#0" expanded="false" />
-          </folding>
+          <caret line="64" column="62" selection-start-line="64" selection-start-column="49" selection-end-line="64" selection-end-column="62" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -815,16 +773,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
+    <entry file="file://$PROJECT_DIR$/edit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+          <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/additem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="128" column="98" selection-start-line="128" selection-start-column="98" selection-end-line="128" selection-end-column="98" />
           <folding>
-            <marker date="1433025612451" expanded="true" signature="2285:2321" placeholder="..." />
-            <marker date="1433025612451" expanded="true" signature="11706:11751" placeholder="..." />
-            <marker date="1433025612451" expanded="true" signature="14287:14332" placeholder="..." />
-            <marker date="1433025612451" expanded="true" signature="16872:16917" placeholder="..." />
-            <marker date="1433025612451" expanded="true" signature="19461:19506" placeholder="..." />
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wire5.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="125" column="20" selection-start-line="125" selection-start-column="20" selection-end-line="125" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/wire3.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="44" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wire2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="67" selection-start-line="30" selection-start-column="67" selection-end-line="30" selection-end-column="67" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#section#0;n#section#0;n#section#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0216509">
+          <caret line="163" column="67" selection-start-line="163" selection-start-column="67" selection-end-line="163" selection-end-column="67" />
+          <folding>
+            <marker date="1433039515284" expanded="true" signature="2285:2321" placeholder="..." />
+            <marker date="1433039515284" expanded="true" signature="14707:14752" placeholder="..." />
+            <marker date="1433039515284" expanded="true" signature="17288:17333" placeholder="..." />
+            <marker date="1433039515284" expanded="true" signature="19873:19918" placeholder="..." />
+            <marker date="1433039515284" expanded="true" signature="22462:22507" placeholder="..." />
           </folding>
         </state>
       </provider>

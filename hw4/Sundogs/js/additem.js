@@ -129,6 +129,7 @@ $(document).ready(function(){
                 var newItem = myFirebaseRef.child("User").child(authData.uid).child(metal).push();
 
                 newItem.set({Date: date, Goldp: gold_percent, Metal: metal, Premium: premium, Qty: quantity, Type: type, UnitPrice: unit_price, Weight: weight});
+
             }
         });
 

@@ -104,6 +104,74 @@ $(window).load(function() {
 	var page_name = path.split("/").pop();
 	var page_parameter = parameter.split("?").pop();
 
+	if (page_name == "wire2.html"){
+		var myDataRef = new Firebase("https://flickering-heat-2946.firebaseio.com/Data/");
+		myDataRef.on('value', function(dataSnapshot){
+			dataSnapshot.forEach(function(childSnapshot){
+				if (childSnapshot.key() === "Gold") {
+					var price = dataSnapshot.child(childSnapshot.key()).child("0").child("1").val();
+					var myFirebaseRef = new Firebase("https://flickering-heat-2946.firebaseio.com/");
+					var user = null;
+					myFirebaseRef.onAuth(function (authData) {
+						if (authData) {
+							user = authData.uid;
+						}
+					});
+					var gold = myFirebaseRef.child("User/" + user + "/Gold/").on('value', function (dataSnapshot) {
+						dataSnapshot.forEach(function (childSnapshot) {
+							var totalWeight = Number($("#hidden_cal").html());
+							totalWeight += childSnapshot.val()["Weight"] * childSnapshot.val()["Goldp"] * childSnapshot.val()["Qty"];
+							$("#hidden_cal").html(totalWeight);
+						});
+						var alltotal = Number($("#all_total").html());
+						alltotal += Number(price) * Number($("#hidden_cal").html());
+						$("#all_total").html(alltotal.toPrecision(6));
+					});
+				}else if (childSnapshot.key() === "Silver"){
+					var price = dataSnapshot.child(childSnapshot.key()).child("0").child("1").val();
+					var myFirebaseRef = new Firebase("https://flickering-heat-2946.firebaseio.com/");
+					var user = null;
+					myFirebaseRef.onAuth(function (authData) {
+						if (authData) {
+							user = authData.uid;
+						}
+					});
+					var gold = myFirebaseRef.child("User/" + user + "/Silver/").on('value', function (dataSnapshot) {
+						dataSnapshot.forEach(function (childSnapshot) {
+							var totalWeight = Number($("#hidden_cal").html());
+							totalWeight += childSnapshot.val()["Weight"] * childSnapshot.val()["Goldp"] * childSnapshot.val()["Qty"];
+							$("#hidden_cal").html(totalWeight);
+						});
+						var alltotal = Number($("#all_total").html());
+						alltotal += Number(price) * Number($("#hidden_cal").html());
+						$("#all_total").html(alltotal.toPrecision(6));
+					});
+				}else if (childSnapshot.key() === "Platinum"){
+					var price = dataSnapshot.child(childSnapshot.key()).child("0").child("1").val();
+					var myFirebaseRef = new Firebase("https://flickering-heat-2946.firebaseio.com/");
+					var user = null;
+					myFirebaseRef.onAuth(function (authData) {
+						if (authData) {
+							user = authData.uid;
+						}
+					});
+					var gold = myFirebaseRef.child("User/" + user + "/Platinum/").on('value', function (dataSnapshot) {
+						dataSnapshot.forEach(function (childSnapshot) {
+							var totalWeight = Number($("#hidden_cal").html());
+							totalWeight += childSnapshot.val()["Weight"] * childSnapshot.val()["Goldp"] * childSnapshot.val()["Qty"];
+							$("#hidden_cal").html(totalWeight);
+						});
+						var alltotal = Number($("#all_total").html());
+						alltotal += Number(price) * Number($("#hidden_cal").html());
+						$("#all_total").html(alltotal.toPrecision(6));
+					});
+				}
+
+
+			});
+		});
+	}
+
 
 	/* * * * * * * * * * * * * *
 	 *                         *
