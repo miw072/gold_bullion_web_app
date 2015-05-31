@@ -21,6 +21,60 @@
     <script type="text/javascript">loadTopNavPersist();</script>
     <script type="text/javascript">loadSideNav(0);</script>
 
+    <script>
+        function getAskBids(){
+            $.ajax({
+                type: "GET",
+                dataType: 'text',
+                url: "https://cse134b.herokuapp.com/jm",
+                crossDomain : true,
+                xhrFields: {
+                    withCredentials: false
+                }
+            })
+                    .done(function( csvdata ) {
+                        var jsonAB = eval(csvdata);
+                        //csvdata += jsonAB[i].symbol+" prices for "+ new Date(jsonAB[3].timestamp*1000).toISOString().slice(0, 10)+":\n";
+                        if (jsonAB[0].oneDayPercentChange >= 0){
+                            $("#gold_change").attr("class", "pos-change");
+                            $("#gold_change").html("+" + jsonAB[0].oneDayPercentChange);
+                        }else{
+                            $("#gold_change").attr("class", "neg-change");
+                            $("#gold_change").html(jsonAB[0].oneDayPercentChange);
+                        }
+                        $("#gold_bid").html(jsonAB[0].bid);
+                        $("#gold_ask").html(jsonAB[0].ask);
+
+                        if (jsonAB[1].oneDayPercentChange >= 0){
+                            $("#silver_change").attr("class", "pos-change");
+                            $("#silver_change").html("+" + jsonAB[1].oneDayPercentChange);
+                        }else{
+                            $("#silver_change").attr("class", "neg-change");
+                            $("#silver_change").html(jsonAB[1].oneDayPercentChange);
+                        }
+                        $("#silver_bid").html(jsonAB[1].bid);
+                        $("#silver_ask").html(jsonAB[1].ask);
+
+
+                        if (jsonAB[2].oneDayPercentChange >= 0){
+                            $("#platinum_change").attr("class", "pos-change");
+                            $("#platinum_change").html("+" + jsonAB[2].oneDayPercentChange);
+                        }else{
+                            $("#platinum_change").attr("class", "neg-change");
+                            $("#platinum_change").html(jsonAB[2].oneDayPercentChange);
+                        }
+                        $("#platinum_bid").html(jsonAB[2].bid);
+                        $("#platinum_ask").html(jsonAB[2].ask);
+
+                    })
+                    .fail( function(xhr, textStatus, errorThrown) {
+                        alert(xhr.responseText);
+                        alert(textStatus);
+                    });
+        }
+        getAskBids();
+    </script>
+
     <section class="main-section">
 
 
@@ -29,7 +83,8 @@
                 <section class="total-value">
                     <div class="total-dollars" id = "all_total"></div>
                     <div id = "hidden_cal" style="display: none;">0</div>
-                    <div class="total-change pos-change">+3.5%</div><br/>
+                    <div id = "change_percent"></div><br/>
+                    <div id = "hidden_last" style = "display:none;">0</div>
                     <div class="total-label">My Total Coin Value</div>
                 </section>
                 <section class="mobile-toggle">
@@ -73,9 +128,9 @@
                     <section class="market-item-stats">
                         <table>
                             <tr>
-                                <td>1206.10</td>
-                                <td>1207.10</td>
-                                <td class="pos-change">+23.40</td>
+                                <td id = "gold_bid"></td>
+                                <td id = "gold_ask"></td>
+                                <td id = "gold_change"></td>
                             </tr>                    
                             <tr>
                                 <td>Bid</td>
@@ -101,9 +156,9 @@
                     <section class="market-item-stats">
                         <table>
                             <tr>
-                                <td>16.10</td>
-                                <td>16.50</td>
-                                <td class="neg-change">-0.36</td>
+                                <td id = "silver_bid"></td>
+                                <td id = "silver_ask"></td>
+                                <td id = "silver_change"></td>
                             </tr>                    
                             <tr>
                                 <td>Bid</td>
@@ -127,9 +182,9 @@
                     <section class="market-item-stats">
                         <table>
                             <tr>
-                                <td>1206.10</td>
-                                <td>1207.10</td>
-                                <td class="pos-change">+23.40</td>
+                                <td id = "platinum_bid"></td>
+                                <td id = "platinum_ask"></td>
+                                <td id = "platinum_change"></td>
                             </tr>                    
                             <tr>
                                 <td>Bid</td>
