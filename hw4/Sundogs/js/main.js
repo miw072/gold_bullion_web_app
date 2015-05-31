@@ -118,6 +118,7 @@ $(window).load(function() {
 						}
 					});
 					var gold = myFirebaseRef.child("User/" + user + "/Gold/").on('value', function (dataSnapshot) {
+						$("#hidden_cal").html(0);
 						dataSnapshot.forEach(function (childSnapshot) {
 							var totalWeight = Number($("#hidden_cal").html());
 							totalWeight += childSnapshot.val()["Weight"] * childSnapshot.val()["Goldp"] * childSnapshot.val()["Qty"];
@@ -126,6 +127,7 @@ $(window).load(function() {
 						var alltotal = Number($("#all_total").html());
 						alltotal += Number(price) * Number($("#hidden_cal").html());
 						$("#all_total").html(alltotal.toPrecision(6));
+						console.log(alltotal);
 					});
 				}else if (childSnapshot.key() === "Silver"){
 					var price = dataSnapshot.child(childSnapshot.key()).child("0").child("1").val();
@@ -137,6 +139,7 @@ $(window).load(function() {
 						}
 					});
 					var gold = myFirebaseRef.child("User/" + user + "/Silver/").on('value', function (dataSnapshot) {
+						$("#hidden_cal").html(0);
 						dataSnapshot.forEach(function (childSnapshot) {
 							var totalWeight = Number($("#hidden_cal").html());
 							totalWeight += childSnapshot.val()["Weight"] * childSnapshot.val()["Goldp"] * childSnapshot.val()["Qty"];
@@ -145,6 +148,7 @@ $(window).load(function() {
 						var alltotal = Number($("#all_total").html());
 						alltotal += Number(price) * Number($("#hidden_cal").html());
 						$("#all_total").html(alltotal.toPrecision(6));
+						console.log(alltotal);
 					});
 				}else if (childSnapshot.key() === "Platinum"){
 					var price = dataSnapshot.child(childSnapshot.key()).child("0").child("1").val();
@@ -156,6 +160,7 @@ $(window).load(function() {
 						}
 					});
 					var gold = myFirebaseRef.child("User/" + user + "/Platinum/").on('value', function (dataSnapshot) {
+						$("#hidden_cal").html(0);
 						dataSnapshot.forEach(function (childSnapshot) {
 							var totalWeight = Number($("#hidden_cal").html());
 							totalWeight += childSnapshot.val()["Weight"] * childSnapshot.val()["Goldp"] * childSnapshot.val()["Qty"];
@@ -164,6 +169,7 @@ $(window).load(function() {
 						var alltotal = Number($("#all_total").html());
 						alltotal += Number(price) * Number($("#hidden_cal").html());
 						$("#all_total").html(alltotal.toPrecision(6));
+						console.log(alltotal);
 					});
 				}
 
