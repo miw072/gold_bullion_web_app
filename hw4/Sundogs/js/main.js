@@ -203,6 +203,14 @@ $(window).load(function() {
 		});
 	}
 
+	var now = new Date();
+	var h = 24 - now.getHours();
+	var m = 60 - now.getMinutes();
+	var out = "close in " + h + "h" + m + "min";
+	$("#close_time").empty();
+	$("#close_time").append(out);
+
+
 
 	/* * * * * * * * * * * * * *
 	 *                         *
