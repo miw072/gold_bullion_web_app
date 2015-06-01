@@ -32,7 +32,7 @@ $(function () {
             }, function (err) {
                 console.log(err);
                 // pop up error
-               alert("Please using tomcat to run the web project.");
+               alert("Please using localhost to run the web project.");
             });
     }
 
