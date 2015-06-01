@@ -34,6 +34,7 @@ $(document).ready(function(){
                     var weight = curr.Weight;
                     var uprice = curr.Uprice;
                     var totalau = goldozt * $("#Qty").val();
+                    var url = curr.Pic;
 
                     var myDataRef = new Firebase("https://flickering-heat-2946.firebaseio.com/Data/" + metal_string + "/0/1");
                     myDataRef.on('value', function(snapshot){
@@ -48,8 +49,9 @@ $(document).ready(function(){
                     $("#Goldozt").empty();
                     $("#Weight").empty();
                     $("#TotalAu").empty();
+                    $("#Pic").empty();
 
-
+                    $("#Pic").append("<img src = '" + url + "' alt = 'nonono' height = '200' width = '200'>");
                     $("#Goldg").append(goldg);
                     $("#Goldp").append(goldp);
                     $("#Goldozt").append(goldozt);

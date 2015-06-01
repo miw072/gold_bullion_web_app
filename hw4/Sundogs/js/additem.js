@@ -26,6 +26,7 @@ $(document).ready(function(){
             var weight = curr.Weight;
             var totalau = goldozt * $("#new_quantity").val();
             var uprice = curr.Uprice;
+            var url = curr.Pic;
 
             var myDataRef = new Firebase("https://flickering-heat-2946.firebaseio.com/Data/" + metal + "/0/1");
             myDataRef.on('value', function(snapshot){
@@ -36,6 +37,7 @@ $(document).ready(function(){
             });
 
 
+            $("#new_img").empty();
             $("#new_goldg").empty();
             $("#new_goldp").empty();
             $("#new_goldozt").empty();
@@ -43,6 +45,7 @@ $(document).ready(function(){
             $("#new_totalau").empty();
             $("#new_uprice").empty();
 
+            $("#new_img").append("<img src = '" + url + "' alt = 'nonono' height = '200' width = '200'>");
             $("#new_goldg").append(goldg);
             $("#new_goldp").append(goldp);
             $("#new_goldozt").append(goldozt);
@@ -79,6 +82,7 @@ $(document).ready(function(){
                 var goldg = curr.Goldg;
                 var weight = curr.Weight;
                 var uprice = curr.Uprice;
+                var url = curr.Pic;
                 var totalau = goldozt * $("#new_quantity").val();
 
                 var myDataRef = new Firebase("https://flickering-heat-2946.firebaseio.com/Data/" + metal + "/0/1");
@@ -95,8 +99,9 @@ $(document).ready(function(){
                 $("#new_weight").empty();
                 $("#new_uprice").empty();
                 $("#new_totalau").empty();
+                $("#new_img").empty();
 
-
+                $("#new_img").append("<img src = '" + url + "' alt = 'nonono' height = '200' width = '200'>");
                 $("#new_goldg").append(goldg);
                 $("#new_goldp").append(goldp);
                 $("#new_goldozt").append(goldozt);
@@ -149,6 +154,7 @@ $(document).ready(function(){
             var goldg = curr.Goldg;
             var weight = curr.Weight;
             var uprice = curr.Uprice;
+            var url = curr.Pic;
             var totalau = goldozt * $("#new_quantity").val();
 
             var myDataRef = new Firebase("https://flickering-heat-2946.firebaseio.com/Data/" + metal + "/0/1");
@@ -165,8 +171,9 @@ $(document).ready(function(){
             $("#new_weight").empty();
             $("#new_totalau").empty();
             $("#new_uprice").empty();
+            $("#new_img").empty();
 
-
+            $("#new_img").append("<img src = '" + url + "' alt = 'nonono' height = '200' width = '200'>");
             $("#new_goldg").append(goldg);
             $("#new_goldp").append(goldp);
             $("#new_goldozt").append(goldozt);

@@ -33,7 +33,6 @@ $(document).ready(function(){
         var allTotal;
         dataSnapshot.forEach(function(childSnapshot){
             $("#item_list").append("<tr id = '" + childSnapshot.key() + "'></tr>");
-            $("#" + childSnapshot.key() + "").append("<td class='stack_img_col'><div class='coin_mini'></div></td>");
             $("#" + childSnapshot.key() + "").append("<td>" + childSnapshot.val()["Type"] +"</td>");
             $("#" + childSnapshot.key() + "").append("<td>" + childSnapshot.val()["Qty"] +"</td>");
             $("#" + childSnapshot.key() + "").append("<td>" + childSnapshot.val()["Weight"] +"</td>");
@@ -53,7 +52,5 @@ $(document).ready(function(){
             });
         });
     });
-
-
 
 });
