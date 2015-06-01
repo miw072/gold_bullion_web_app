@@ -60,7 +60,8 @@ Javascript:
 	   (2)For wire2.html, we added javascript to get access to the firebase database, get each information of each item in a certain user,
 	      count total and add it html.
 	   (3)We added javascript to get access to the firebase database to fetch the information about the historical price of the three kind of metals.
-		  
+	   (4)We added javascript to display close time.
+
  	2>.In wire3.js:
 	   The functions in this page are used to:
 	   (1)get access to the database
@@ -102,6 +103,7 @@ Javascript:
 	Note: (1)All our javascript implementation is based on jquery. The basic logic part is: 
 		  get information from database -> display it on the page -> get users input -> update page -> update database 
 		  (2)We use firebase database as our back-end service, the APIs we used are from firebase docs and jquery docs.
+		  (3)All of our data displayed on the pages is from database, not hard-coded.
 
 
 # # # # # # # # # # # # # # # 
