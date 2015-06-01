@@ -9,12 +9,15 @@ $(document).ready(function(){
     {
         case "1" : metal_string = "Gold";
                    $("#my_gold_value").text("My Gold Value");
+                   $("#metalbox").append("1oz Gold");
                    break;
         case "2" : metal_string = "Silver";
                    $("#my_gold_value").text("My Silver Value");
+                    $("#metalbox").append("1oz Silver");
                    break;
         case "3" : metal_string = "Platinum";
                    $("#my_gold_value").text("My Platinum Value");
+                    $("#metalbox").append("1oz Platinum");
                    break;
         default  : break;
     }
