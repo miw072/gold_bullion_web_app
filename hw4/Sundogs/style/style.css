@@ -988,6 +988,23 @@ select {
 
 
 
+.press_button {
+
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 2px;
+  background: #1C3A3F;
+  padding: 10px 20px 10px 20px;
+  margin-top: 10px;
+  text-decoration: none;
+  border: 1px solid #68CEDE
+}
+
+.press_button:hover {
+  background: #397C86;
+  text-decoration: none;
+  border: 1px solid #68CEDE
+}
 /* * * * * * * * * * * * * * * *
  *                             *
  *           EDIT              *
@@ -1140,4 +1157,6 @@ select {
         display: none;
         visibility: hidden;
     }
+
+
 }

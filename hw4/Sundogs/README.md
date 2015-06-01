@@ -59,6 +59,7 @@ Javascript:
 	   (1)We added variable to get the metal type for gold/silver/platinum. 
 	   (2)For wire2.html, we added javascript to get access to the firebase database, get each information of each item in a certain user,
 	      count total and add it html.
+	   (3)We added javascript to get access to the firebase database to fetch the information about the historical price of the three kind of metals.
 		  
  	2>.In wire3.js:
 	   The functions in this page are used to:
@@ -85,6 +86,18 @@ Javascript:
 	   (3)display all information attached with the item
 	   (4)allow users to select and update all information
 	   (5)when click save button, save new data to database
+
+	5>.In InsertGraphData.js
+		The functions in this page are used to:
+	   (1) get access to the Quandl to fetch the information 
+	   (2) store the data into the firebase database
+
+	6>.In loggin.js
+		The functions in this page are used to:
+	   (1) allow user to sign up or log in to our application 
+	   (2) user authentication uses two method: 1. traditional email and password 2.
+	   		third party log in including facebook and google( you must use localhost to access the page to 
+	   		make this work)
 	   
 	Note: (1)All our javascript implementation is based on jquery. The basic logic part is: 
 		  get information from database -> display it on the page -> get users input -> update page -> update database 
