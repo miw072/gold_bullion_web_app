@@ -27,7 +27,7 @@
     <section class="main-section">
         <section class="coin_wrapper">
             <div class="mobile-nav">
-                <a href="wire3.html">
+                <a href="wire3.html?1">
                     <svg class="icon icon-keyboard-arrow-left">
                         <symbol id="icon-keyboard-arrow-left" viewBox="0 0 1024 1024">
                             <title>keyboard-arrow-left</title>
@@ -39,7 +39,7 @@
                 ADD ITEM
             </div>
             <div class="coin_main">
-                <a href="wire3.html">
+                <a href="wire3.html?1">
                     <div class="breadcrumb">
                         <svg class="icon icon-play-arrow-rev">
                             <symbol id="icon-play-arrow" viewBox="0 0 1024 1024">
@@ -52,8 +52,8 @@
                     </div>
                 </a>
                 <section class="coin_image">
-                    <div class="img_box">
-                        <div class="img_circle"></div>
+                    <div id = "new_img" class="img_box">
+
                     </div>
                 </section>
                 <section class="coin_detail">
@@ -95,12 +95,11 @@
                         </tr>
                         <tr>
                             <td>Unit Price</td>
-                            <td>
-                                <input id = "new_uprice" name="uprice" value="1250.60" />
+                            <td id = "new_uprice">
                             </td>
                         </tr>
                         <tr>
-                            <td>Gold %</td>
+                            <td>Metal %</td>
                             <td id = "new_goldp"></td>
                         </tr>
                         <tr>
@@ -108,24 +107,24 @@
                             <td id = "new_weight"></td>
                         </tr>
                         <tr>
-                            <td>Gold g/u</td>
+                            <td>Metal g/u</td>
                             <td id = "new_goldg"></td>
                         </tr>
                         <tr>
-                            <td>Gold ozt/u</td>
+                            <td>Metal ozt/u</td>
                             <td id = "new_goldozt"></td>
                         </tr>
                         <tr>
-                            <td>Total au (ozt)</td>
+                            <td>Total metal (ozt)</td>
                             <td id = "new_totalau"></td>
                         </tr>
                         <tr>
                             <td><strong>TOTAL</strong></td>
-                            <td><strong>1199.10</strong></td>
+                            <td id = "total"><strong></strong></td>
                         </tr>
                     </table>
-                    <a href="wire3.html"><span id="save">Save to My Stack</span></a>
-                    <a href="wire3.html"><span id="cancel">Cancel</span></a>
+                    <a href="wire3.html?1"><span id="save">Save to My Stack</span></a>
+                    <a href="wire3.html?1"><span id="cancel">Cancel</span></a>
                 </section>
             </div>
         </section>

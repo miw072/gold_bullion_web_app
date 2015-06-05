@@ -100,7 +100,115 @@ function loadFooter(){
 $(window).load(function() {
 
 	var path = window.location.pathname;
-	var page = path.split("/").pop();
+	var parameter= window.location.search;
+	var page_name = path.split("/").pop();
+	var page_parameter = parameter.split("?").pop();
+
+	if (page_name == "wire2.html"){
+		var myDataRef = new Firebase("https://flickering-heat-2946.firebaseio.com/Data/");
+		myDataRef.on('value', function(dataSnapshot){
+			dataSnapshot.forEach(function(childSnapshot){
+				if (childSnapshot.key() === "Gold") {
+					var price = dataSnapshot.child(childSnapshot.key()).child("0").child("1").val();
+					var lastPrice = dataSnapshot.child(childSnapshot.key()).child("1").child("1").val();
+					var myFirebaseRef = new Firebase("https://flickering-heat-2946.firebaseio.com/");
+					var user = null;
+					myFirebaseRef.onAuth(function (authData) {
+						if (authData) {
+							user = authData.uid;
+						}
+					});
+					var gold = myFirebaseRef.child("User/" + user + "/Gold/").on('value', function (dataSnapshot) {
+						$("#hidden_cal").html(0);
+						dataSnapshot.forEach(function (childSnapshot) {
+							var totalWeight = Number($("#hidden_cal").html());
+							totalWeight += childSnapshot.val()["Weight"] * childSnapshot.val()["Goldp"] * childSnapshot.val()["Qty"];
+							$("#hidden_cal").html(totalWeight);
+						});
+						var alltotal = Number($("#all_total").html());
+						var lastAllTotal = Number($("#hidden_last").html());
+						lastAllTotal += Number(lastPrice) * Number($("#hidden_cal").html());
+						alltotal += Number(price) * Number($("#hidden_cal").html());
+						$("#all_total").html(alltotal.toPrecision(6));
+						$("#hidden_last").html(lastAllTotal);
+						$("#change_percent").html((100 * (alltotal - lastAllTotal)/ lastAllTotal).toPrecision(4));
+						if ((alltotal - lastAllTotal) >= 0){
+							$("#change_percent").attr("class", "pos-change");
+						}else{
+							$("#change_percent").attr("class", "neg-change");
+						}
+					});
+				}else if (childSnapshot.key() === "Silver"){
+					var price = dataSnapshot.child(childSnapshot.key()).child("0").child("1").val();
+					var lastPrice = dataSnapshot.child(childSnapshot.key()).child("1").child("1").val();
+					var myFirebaseRef = new Firebase("https://flickering-heat-2946.firebaseio.com/");
+					var user = null;
+					myFirebaseRef.onAuth(function (authData) {
+						if (authData) {
+							user = authData.uid;
+						}
+					});
+					var gold = myFirebaseRef.child("User/" + user + "/Silver/").on('value', function (dataSnapshot) {
+						$("#hidden_cal").html(0);
+						dataSnapshot.forEach(function (childSnapshot) {
+							var totalWeight = Number($("#hidden_cal").html());
+							totalWeight += childSnapshot.val()["Weight"] * childSnapshot.val()["Goldp"] * childSnapshot.val()["Qty"];
+							$("#hidden_cal").html(totalWeight);
+						});
+						var alltotal = Number($("#all_total").html());
+						var lastAllTotal = Number($("#hidden_last").html());
+						lastAllTotal += Number(lastPrice) * Number($("#hidden_cal").html());
+						alltotal += Number(price) * Number($("#hidden_cal").html());
+						$("#all_total").html(alltotal.toPrecision(6));
+						$("#hidden_last").html(lastAllTotal);
+						$("#change_percent").html((100 * (alltotal - lastAllTotal)/ lastAllTotal).toPrecision(4));
+						if ((alltotal - lastAllTotal) >= 0){
+							$("#change_percent").attr("class", "pos-change");
+						}else{
+							$("#change_percent").attr("class", "neg-change");
+						}
+					});
+				}else if (childSnapshot.key() === "Platinum"){
+					var price = dataSnapshot.child(childSnapshot.key()).child("0").child("1").val();
+					var lastPrice = dataSnapshot.child(childSnapshot.key()).child("1").child("1").val();
+					var myFirebaseRef = new Firebase("https://flickering-heat-2946.firebaseio.com/");
+					var user = null;
+					myFirebaseRef.onAuth(function (authData) {
+						if (authData) {
+							user = authData.uid;
+						}
+					});
+					var gold = myFirebaseRef.child("User/" + user + "/Platinum/").on('value', function (dataSnapshot) {
+						$("#hidden_cal").html(0);
+						dataSnapshot.forEach(function (childSnapshot) {
+							var totalWeight = Number($("#hidden_cal").html());
+							totalWeight += childSnapshot.val()["Weight"] * childSnapshot.val()["Goldp"] * childSnapshot.val()["Qty"];
+							$("#hidden_cal").html(totalWeight);
+						});
+						var alltotal = Number($("#all_total").html());
+						var lastAllTotal = Number($("#hidden_last").html());
+						lastAllTotal += Number(lastPrice) * Number($("#hidden_cal").html());
+						alltotal += Number(price) * Number($("#hidden_cal").html());
+						$("#all_total").html(alltotal.toPrecision(6));
+						$("#hidden_last").html(lastAllTotal);
+						$("#change_percent").html((100 * (alltotal - lastAllTotal)/ lastAllTotal).toPrecision(4));
+						if ((alltotal - lastAllTotal) >= 0){
+							$("#change_percent").attr("class", "pos-change");
+						}else{
+							$("#change_percent").attr("class", "neg-change");
+						}
+					});
+				}
+			});
+		});
+	}
+
+	var now = new Date();
+	var h = 24 - now.getHours();
+	var m = 60 - now.getMinutes();
+	var out = "close in " + h + "h" + m + "min";
+	$("#close_time").empty();
+	$("#close_time").append(out);
 
 
 
@@ -127,49 +235,38 @@ $(window).load(function() {
 	 *                         *
 	 * * * * * * * * * * * * * */
  	// graph for wire2 page
-	function myfuntion(myAPI){
-		var json = null;
-		$.ajax({
-			'async': false,
-			'global': false,
-			'url': myAPI,
-			'dataType': "json",
-			'success': function (data) {
-				json = data.data;
-			}
-		});
-		return json;
-	}
+ 	function getGraphData(data){
+  			var date = []; 
+ 			var value = []
+ 			for (i=0;i<30;i++){
+ 				date.splice(0, 0, data[i][0]);
+ 				value.splice(0, 0, data[i][1]);
+ 			}
+ 			return [date,value];
+ 	};
+
+
  	var drawGraph = function(){
+
+ 		var myFirebaseRef = new Firebase("https://flickering-heat-2946.firebaseio.com");
+ 		myFirebaseRef.child("Data").once('value', function(snapshot){
+ 			gold = snapshot.child("Gold").val();
+ 			silver = snapshot.child("Silver").val();
+ 			platinum = snapshot.child("Platinum").val();
+ 			goldV = getGraphData(gold);
+ 			silverV = getGraphData(silver);
+ 			platinumV = getGraphData(platinum);
+
  		var pointStroke = "rgba(255,255,255,0.6)";
  		var pointHighlightFill = "#fff";
  		var pointHighlightStroke = "#fff";
 
- 		if(page == "wire2.html") {
-
-			var myAPI = "https://www.quandl.com/api/v1/datasets/WSJ/PL_EIB.json?auth_token=5s-ML76zo41KMnmSPPf_&trim_start=2015-02-22";
-
-			var json = myfuntion(myAPI);
-
-			var myDataSet = [];
-			var myDate = [];
-			for (i=0;i<30;i++){
-				myDataSet.splice(0,0,json[i][1]);
-				if (i==0){
-					myDate.splice(0,0,json[i][0]);
-				}
-				else if (i==29){
-					myDate.splice(0,0,json[i][0]);
-				}
-				else
-					myDate.splice(0,0,"");
-			}
-
+ 		if(page_name == "wire2.html") {
 
  			var data = {
- 				labels: myDate,
+ 				labels: goldV[0],
  				datasets: [
- 				{
+ 				/*{
  					label: "Gold Total",
  					fillColor: "rgba(104, 206, 222, 0.05)",
  					strokeColor: "#FF6D67",
@@ -198,7 +295,7 @@ $(window).load(function() {
  					pointHighlightFill: pointHighlightFill,
  					pointHighlightStroke: pointHighlightStroke,
  					data: [200, 350, 300, 389, 330, 400, 488]
- 				},
+ 				},*/
  				{
  					label: "1oz Gold",
  					fillColor: "rgba(104, 206, 222, 0.05)",
@@ -207,7 +304,7 @@ $(window).load(function() {
  					pointStrokeColor: pointStroke,
  					pointHighlightFill: pointHighlightFill,
  					pointHighlightStroke: pointHighlightStroke,
- 					data: [100, 110, 120, 90, 102, 135, 115]
+ 					data: goldV[1]
  				},
  				{
  					label: "1oz Platinum",
@@ -217,7 +314,7 @@ $(window).load(function() {
  					pointStrokeColor: pointStroke,
  					pointHighlightFill: pointHighlightFill,
  					pointHighlightStroke: pointHighlightStroke,
- 					data: [56, 78, 67, 68, 73, 80, 76]
+ 					data: platinumV[1]
  				},
  				{
  					label: "1oz Silver",
@@ -227,7 +324,7 @@ $(window).load(function() {
  					pointStrokeColor: pointStroke,
  					pointHighlightFill: pointHighlightFill,
  					pointHighlightStroke: pointHighlightStroke,
- 					data: [20, 22, 20, 32, 35, 50, 40]
+ 					data: silverV[1]
  				},
  				]
  			};
@@ -290,11 +387,11 @@ $(window).load(function() {
 			var coinChart = new Chart(ctx).Line(data,options);
 			coinChart.update();
 		}
-		else if(page =="wire3.html"){
+		else if(page_name == "wire3.html" && page_parameter == "1"){
 			var data = {
-				labels: ["January", "February", "March", "April", "May", "June", "July"],
+				labels: goldV[0],
 				datasets: [
-				{
+				/*{
 					label: "Gold Total",
 					fillColor: "rgba(104, 206, 222, 0.05)",
 					strokeColor: "#FF6D67",
@@ -303,7 +400,7 @@ $(window).load(function() {
 					pointHighlightFill: pointHighlightFill,
 					pointHighlightStroke: pointHighlightStroke,
 					data: [700,820,700,800,730,950,900]
-				},
+				},*/
 				{
 					label: "1oz Gold",
 					fillColor: "rgba(104, 206, 222, 0.05)",
@@ -312,7 +409,7 @@ $(window).load(function() {
 					pointStrokeColor: pointStroke,
 					pointHighlightFill: pointHighlightFill,
 					pointHighlightStroke: pointHighlightStroke,
-					data: [100, 110, 120, 90, 102, 135, 115]
+					data: goldV[1]
 				}
 				]
 			};
@@ -375,6 +472,177 @@ $(window).load(function() {
 			var coinChart = new Chart(ctx).Line(data,options);
 			coinChart.update();
 		}
+		else if(page_name == "wire3.html" && page_parameter == "2"){
+			var data = {
+				labels: goldV[0],
+				datasets: [
+				/*{
+					label: "Gold Total",
+					fillColor: "rgba(104, 206, 222, 0.05)",
+					strokeColor: "#FF6D67",
+					pointColor: "#FF6D67",
+					pointStrokeColor: pointStroke,
+					pointHighlightFill: pointHighlightFill,
+					pointHighlightStroke: pointHighlightStroke,
+					data: [700,820,700,800,730,950,900]
+				},*/
+				{
+					label: "1oz Silver",
+					fillColor: "rgba(104, 206, 222, 0.05)",
+					strokeColor: "#9FFF98",
+					pointColor: "#9FFF98",
+					pointStrokeColor: pointStroke,
+					pointHighlightFill: pointHighlightFill,
+					pointHighlightStroke: pointHighlightStroke,
+					data: silverV[1]
+				}
+				]
+			};
+
+			var options = {
+
+			    ///Boolean - Whether grid lines are shown across the chart
+			    scaleShowGridLines : true,
+
+			    //String - Colour of the grid lines
+			    scaleGridLineColor : "rgba(104, 206, 222, 0.1)",
+
+			    //Number - Width of the grid lines
+			    scaleGridLineWidth : 1,
+
+			    //Boolean - Whether to show horizontal lines (except X axis)
+			    scaleShowHorizontalLines: true,
+
+			    //Boolean - Whether to show vertical lines (except Y axis)
+			    scaleShowVerticalLines: true,
+
+			    //Boolean - Whether the line is curved between points
+			    bezierCurve : true,
+
+			    //Number - Tension of the bezier curve between points
+			    bezierCurveTension : 0.4,
+
+			    //Boolean - Whether to show a dot for each point
+			    pointDot : true,
+
+			    //Number - Radius of each point dot in pixels
+			    pointDotRadius : 4,
+
+			    //Number - Pixel width of point dot stroke
+			    pointDotStrokeWidth : 1,
+
+			    //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
+			    pointHitDetectionRadius : 20,
+
+			    //Boolean - Whether to show a stroke for datasets
+			    datasetStroke : true,
+
+			    //Number - Pixel width of dataset stroke
+			    datasetStrokeWidth : 2,
+
+			    //Boolean - Whether to fill the dataset with a colour
+			    datasetFill : true,
+
+			    //String - A legend template
+			    legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>",
+
+			    responsive: true,
+
+			    maintainAspectRatio: false
+
+
+			};
+
+			var ctx = document.getElementById("total-chart").getContext("2d");
+			var coinChart = new Chart(ctx).Line(data,options);
+			coinChart.update();
+		}
+		else if(page_name == "wire3.html" && page_parameter == "3"){
+			var data = {
+				labels: goldV[0],
+				datasets: [
+				/*{
+					label: "Gold Total",
+					fillColor: "rgba(104, 206, 222, 0.05)",
+					strokeColor: "#FF6D67",
+					pointColor: "#FF6D67",
+					pointStrokeColor: pointStroke,
+					pointHighlightFill: pointHighlightFill,
+					pointHighlightStroke: pointHighlightStroke,
+					data: [700,820,700,800,730,950,900]
+				},*/
+				{
+					label: "1oz Platinum",
+					fillColor: "rgba(104, 206, 222, 0.05)",
+					strokeColor: "#9FFF98",
+					pointColor: "#9FFF98",
+					pointStrokeColor: pointStroke,
+					pointHighlightFill: pointHighlightFill,
+					pointHighlightStroke: pointHighlightStroke,
+					data: platinumV[1]
+				}
+				]
+			};
+
+			var options = {
+
+			    ///Boolean - Whether grid lines are shown across the chart
+			    scaleShowGridLines : true,
+
+			    //String - Colour of the grid lines
+			    scaleGridLineColor : "rgba(104, 206, 222, 0.1)",
+
+			    //Number - Width of the grid lines
+			    scaleGridLineWidth : 1,
+
+			    //Boolean - Whether to show horizontal lines (except X axis)
+			    scaleShowHorizontalLines: true,
+
+			    //Boolean - Whether to show vertical lines (except Y axis)
+			    scaleShowVerticalLines: true,
+
+			    //Boolean - Whether the line is curved between points
+			    bezierCurve : true,
+
+			    //Number - Tension of the bezier curve between points
+			    bezierCurveTension : 0.4,
+
+			    //Boolean - Whether to show a dot for each point
+			    pointDot : true,
+
+			    //Number - Radius of each point dot in pixels
+			    pointDotRadius : 4,
+
+			    //Number - Pixel width of point dot stroke
+			    pointDotStrokeWidth : 1,
+
+			    //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
+			    pointHitDetectionRadius : 20,
+
+			    //Boolean - Whether to show a stroke for datasets
+			    datasetStroke : true,
+
+			    //Number - Pixel width of dataset stroke
+			    datasetStrokeWidth : 2,
+
+			    //Boolean - Whether to fill the dataset with a colour
+			    datasetFill : true,
+
+			    //String - A legend template
+			    legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>",
+
+			    responsive: true,
+
+			    maintainAspectRatio: false
+
+
+			};
+
+			var ctx = document.getElementById("total-chart").getContext("2d");
+			var coinChart = new Chart(ctx).Line(data,options);
+			coinChart.update();
+		}
+	});
 	};
 
 	drawGraph();
@@ -389,7 +657,7 @@ $(window).load(function() {
 	 	$('.graph-panel').removeClass('graph-panel-show');
 	 	$('.market-status').fadeIn(0);
 	 	$('.market-list').fadeIn(0);
-	 	if( page == "wire3.html")
+	 	if( page_name == "wire3.html")
 	 		$('.my_stack').fadeIn(0);
 	 	$('.mtb-2').removeClass('mobile-toggle-selected');
 	 	$('.mtb-1').addClass('mobile-toggle-selected');
@@ -399,7 +667,7 @@ $(window).load(function() {
 	 $('.mtb-2').click(function(){
 	 	$('.market-status').fadeOut(0);
 	 	$('.market-list').fadeOut(0);
-	 	if( page == "wire3.html")
+	 	if( page_name == "wire3.html")
 	 		$('.my_stack').fadeOut(0);
 	 	$('.mtb-1').removeClass('mobile-toggle-selected');
 	 	$('.mtb-2').addClass('mobile-toggle-selected');
@@ -415,7 +683,7 @@ $(window).load(function() {
 	 		$('.graph-panel').removeClass('graph-panel-show');
 	 		$('.market-status').fadeIn(0);
 	 		$('.market-list').fadeIn(0);
-	 		if( page == "wire3.html")
+	 		if( page_name == "wire3.html")
 	 			$('.my_stack').fadeIn(0);
 	 		$('.mtb-2').removeClass('mobile-toggle-selected');
 	 		$('.mtb-1').addClass('mobile-toggle-selected');

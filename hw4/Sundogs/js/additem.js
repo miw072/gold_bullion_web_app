@@ -25,18 +25,33 @@ $(document).ready(function(){
             var goldg = curr.Goldg;
             var weight = curr.Weight;
             var totalau = goldozt * $("#new_quantity").val();
+            var uprice = curr.Uprice;
+            var url = curr.Pic;
 
+            var myDataRef = new Firebase("https://flickering-heat-2946.firebaseio.com/Data/" + metal + "/0/1");
+            myDataRef.on('value', function(snapshot){
+                var goldPrice = snapshot.val();
+                var total = uprice * $("#new_quantity").val();
+                $("#total").empty();
+                $("#total").append(total.toPrecision(6));
+            });
+
+
+            $("#new_img").empty();
             $("#new_goldg").empty();
             $("#new_goldp").empty();
             $("#new_goldozt").empty();
             $("#new_weight").empty();
             $("#new_totalau").empty();
+            $("#new_uprice").empty();
 
+            $("#new_img").append("<img src = '" + url + "' alt = 'nonono' height = '200' width = '200'>");
             $("#new_goldg").append(goldg);
             $("#new_goldp").append(goldp);
             $("#new_goldozt").append(goldozt);
             $("#new_weight").append(weight);
-            $("#new_totalau").append(totalau);
+            $("#new_uprice").append(uprice);
+            $("#new_totalau").append(totalau.toPrecision(6));
 
         });
     });
@@ -66,20 +81,33 @@ $(document).ready(function(){
                 var goldozt = curr.Goldozt;
                 var goldg = curr.Goldg;
                 var weight = curr.Weight;
+                var uprice = curr.Uprice;
+                var url = curr.Pic;
                 var totalau = goldozt * $("#new_quantity").val();
+
+                var myDataRef = new Firebase("https://flickering-heat-2946.firebaseio.com/Data/" + metal + "/0/1");
+                myDataRef.on('value', function(snapshot){
+                    var goldPrice = snapshot.val();
+                    var total = uprice * $("#new_quantity").val();
+                    $("#total").empty();
+                    $("#total").append(total.toPrecision(6));
+                });
 
                 $("#new_goldg").empty();
                 $("#new_goldp").empty();
                 $("#new_goldozt").empty();
                 $("#new_weight").empty();
+                $("#new_uprice").empty();
                 $("#new_totalau").empty();
+                $("#new_img").empty();
 
-
+                $("#new_img").append("<img src = '" + url + "' alt = 'nonono' height = '200' width = '200'>");
                 $("#new_goldg").append(goldg);
                 $("#new_goldp").append(goldp);
                 $("#new_goldozt").append(goldozt);
                 $("#new_weight").append(weight);
-                $("#new_totalau").append(totalau);
+                $("#new_uprice").append(uprice);
+                $("#new_totalau").append(totalau.toPrecision(6));
 
             });
         });
@@ -96,7 +124,7 @@ $(document).ready(function(){
         var date = $("#new_date").val();
         var quantity = $("#new_quantity").val();
         var premium = $("#new_prem").val();
-        var unit_price = $("#new_uprice").val();
+        var unit_price = $("#new_uprice").html();
         var gold_percent = $("#new_goldp").html();
         var weight = $("#new_weight").html();
 
@@ -125,20 +153,33 @@ $(document).ready(function(){
             var goldozt = curr.Goldozt;
             var goldg = curr.Goldg;
             var weight = curr.Weight;
+            var uprice = curr.Uprice;
+            var url = curr.Pic;
             var totalau = goldozt * $("#new_quantity").val();
+
+            var myDataRef = new Firebase("https://flickering-heat-2946.firebaseio.com/Data/" + metal + "/0/1");
+            myDataRef.on('value', function(snapshot){
+                var goldPrice = snapshot.val();
+                var total = uprice * $("#new_quantity").val();
+                $("#total").empty();
+                $("#total").append(total.toPrecision(6));
+            });
 
             $("#new_goldg").empty();
             $("#new_goldp").empty();
             $("#new_goldozt").empty();
             $("#new_weight").empty();
             $("#new_totalau").empty();
+            $("#new_uprice").empty();
+            $("#new_img").empty();
 
-
+            $("#new_img").append("<img src = '" + url + "' alt = 'nonono' height = '200' width = '200'>");
             $("#new_goldg").append(goldg);
             $("#new_goldp").append(goldp);
             $("#new_goldozt").append(goldozt);
             $("#new_weight").append(weight);
-            $("#new_totalau").append(totalau);
+            $("#new_uprice").append(uprice);
+            $("#new_totalau").append(totalau.toPrecision(6));
 
         });
     });
@@ -152,12 +193,25 @@ $(document).ready(function(){
         myTypeRef.on('value', function(snapshot){
             var curr = snapshot.val();
 
+            var weight = curr.Weight;
+            var goldp = curr.Goldp;
+            var uprice = curr.Uprice;
             var goldozt = curr.Goldozt;
             var totalau = goldozt * $("#new_quantity").val();
 
+
+            var myDataRef = new Firebase("https://flickering-heat-2946.firebaseio.com/Data/" + metal + "/0/1");
+            myDataRef.on('value', function(snapshot){
+                var goldPrice = snapshot.val();
+                var total = uprice * $("#new_quantity").val();
+                $("#total").empty();
+                $("#total").append(total.toPrecision(6));
+            });
+
+
             $("#new_totalau").empty();
 
-            $("#new_totalau").append(totalau);
+            $("#new_totalau").append(totalau.toPrecision(6));
 
         });
     });

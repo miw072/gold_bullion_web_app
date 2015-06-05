@@ -31,8 +31,9 @@ $(function () {
 
             }, function (err) {
                 // pop up error
+
                 console.log(err);
-               alert("Please using tomcat to run the web project.");
+               alert("Please using localhost to run the web project.");
             });
     }
 
