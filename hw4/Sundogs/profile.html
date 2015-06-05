@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="bullion management site, rare coins, gold, silver, platinum">
+    <meta name="author" content="CSE134B Dream Team">
+    <link rel="stylesheet" type="text/css" href="./style/style.css">
+    <meta name=viewport content="width=device-width, initial-scale=.8, minimum-scale = .8, user-scalable=yes">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <script src="./js/jquery-1.11.2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-serialize-object/2.0.0/jquery.serialize-object.compiled.js"></script>
+    <script src="./js/velocity.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/1.1.1/firebase.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.2.5/firebase.js"></script>
+    <script src="./js/UpdateProfile.js"></script>
+
+    <!-- Firebase -->
+
+    <!-- Firebase Simple Login -->
+    <script src="https://cdn.firebase.com/js/simple-login/1.6.2/firebase-simple-login.js"></script>
+    <script src="./js/loggin.js"></script>
+    <title>Login - CoinFlip</title>
+    <style>
+        .accordion-toggle {cursor: pointer;}
+        .accordion-content {display: none;}
+        .accordion-content.default {display: block;}
+    </style>
+</head>
+
+<body>
+<script type="text/javascript">loadTopNavPersist();</script>
+<script type="text/javascript">loadSideNav(0);</script>
+<section class="main-section">
+    <div id="status"></div>
+    <div class="coin_detail">
+        <table>
+            <tr>
+                <td>Email</td>
+                <td id="old_email"></td>
+            </tr>
+            <tr>
+                <td>Old Password</td>
+                <td><input id="txt_old_pass" type="password"/> </td>
+            </tr>
+            <tr>
+                <td>New Email</td>
+                <td><input id="txt_new_email" type="email"/> </td>
+            </tr>
+            <tr>
+                <td>New Password</td>
+                <td><input id="txt_new_pass" type="password"/> </td>
+            </tr>
+            <tr>
+                <td>Confirm Password</td>
+                <td><input id="txt_confirm_pass" type="password"/> </td>
+            </tr>
+        </table>
+        <button id="change_password" class="press_button">Change</button>
+    </div>
+</section>
+
+<script type="text/javascript">loadFooter();</script>
+</body>
+
+</html>
