@@ -6,6 +6,7 @@ $(document).ready(function(){
     var metal = sessionStorage.metal;
     $("#new_metal").val(""+metal+"");
 
+
     var myMetalRef = new Firebase("https://flickering-heat-2946.firebaseio.com/CoinType/");
     myMetalRef.child(metal).on('value', function (dataSnapshot) {
         $("#new_type").empty();

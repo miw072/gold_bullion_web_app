@@ -2,6 +2,7 @@
  * Created by Mingxuan on 2015/5/27.
  */
 $(document).ready(function(){
+
     var query = window.location.search;
     var metal_id = query.split("?")[1];
     var metal_string = null;

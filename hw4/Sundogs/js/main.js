@@ -99,6 +99,8 @@ function loadFooter(){
 
 $(window).load(function() {
 
+
+
 	var path = window.location.pathname;
 	var parameter= window.location.search;
 	var page_name = path.split("/").pop();
@@ -221,6 +223,147 @@ $(window).load(function() {
 	 $('.icon-spinner2').click(function(){
 	 	location.reload();	
 	 });
+
+
+	var mode = sessionStorage.mode;
+
+	if (mode === "day"){
+		var css = 'html {-webkit-filter: invert(100%);' +
+				'-moz-filter: invert(100%);' +
+				'-o-filter: invert(100%);' +
+				'-ms-filter: invert(100%); }',
+			head = document.getElementsByTagName('head')[0],
+			style = document.createElement('style');
+
+		style.type = 'text/css';
+		if (style.styleSheet){
+			style.styleSheet.cssText = css;
+		} else {
+			style.appendChild(document.createTextNode(css));
+		}
+		head.appendChild(style);
+
+		var css = 'img {-webkit-filter: invert(100%);' +
+				'-moz-filter: invert(100%);' +
+				'-o-filter: invert(100%);' +
+				'-ms-filter: invert(100%); }',
+			head = document.getElementsByTagName('head')[0],
+			style = document.createElement('style');
+
+		style.type = 'text/css';
+		if (style.styleSheet){
+			style.styleSheet.cssText = css;
+		} else {
+			style.appendChild(document.createTextNode(css));
+		}
+		head.appendChild(style);
+
+
+	}else{
+		var css = 'html {-webkit-filter: invert(0%);' +
+				'-moz-filter: invert(0%);' +
+				'-o-filter: invert(0%);' +
+				'-ms-filter: invert(0%); }',
+			head = document.getElementsByTagName('head')[0],
+			style = document.createElement('style');
+
+		style.type = 'text/css';
+		if (style.styleSheet){
+			style.styleSheet.cssText = css;
+		} else {
+			style.appendChild(document.createTextNode(css));
+		}
+		head.appendChild(style);
+
+
+		var css = 'img {-webkit-filter: invert(0%);' +
+				'-moz-filter: invert(0%);' +
+				'-o-filter: invert(0%);' +
+				'-ms-filter: invert(0%); }',
+			head = document.getElementsByTagName('head')[0],
+			style = document.createElement('style');
+
+		style.type = 'text/css';
+		if (style.styleSheet){
+			style.styleSheet.cssText = css;
+		} else {
+			style.appendChild(document.createTextNode(css));
+		}
+		head.appendChild(style);
+	}
+
+	$('.icon-cog').click(function(){
+		var mode = sessionStorage.mode
+		if (mode == "night"){
+			var css = 'html {-webkit-filter: invert(100%);' +
+					'-moz-filter: invert(100%);' +
+					'-o-filter: invert(100%);' +
+					'-ms-filter: invert(100%); }',
+				head = document.getElementsByTagName('head')[0],
+				style = document.createElement('style');
+
+			style.type = 'text/css';
+			if (style.styleSheet){
+				style.styleSheet.cssText = css;
+			} else {
+				style.appendChild(document.createTextNode(css));
+			}
+
+			head.appendChild(style);
+
+			var css = 'img {-webkit-filter: invert(100%);' +
+					'-moz-filter: invert(100%);' +
+					'-o-filter: invert(100%);' +
+					'-ms-filter: invert(100%); }',
+				head = document.getElementsByTagName('head')[0],
+				style = document.createElement('style');
+
+			style.type = 'text/css';
+			if (style.styleSheet){
+				style.styleSheet.cssText = css;
+			} else {
+				style.appendChild(document.createTextNode(css));
+			}
+			head.appendChild(style);
+
+			sessionStorage.mode = "day";
+		}else{
+			var css = 'html {-webkit-filter: invert(0%);' +
+					'-moz-filter: invert(0%);' +
+					'-o-filter: invert(0%);' +
+					'-ms-filter: invert(0%); }',
+				head = document.getElementsByTagName('head')[0],
+				style = document.createElement('style');
+
+			style.type = 'text/css';
+			if (style.styleSheet){
+				style.styleSheet.cssText = css;
+			} else {
+				style.appendChild(document.createTextNode(css));
+			}
+
+			head.appendChild(style);
+
+			var css = 'img {-webkit-filter: invert(0%);' +
+					'-moz-filter: invert(0%);' +
+					'-o-filter: invert(0%);' +
+					'-ms-filter: invert(0%); }',
+				head = document.getElementsByTagName('head')[0],
+				style = document.createElement('style');
+
+			style.type = 'text/css';
+			if (style.styleSheet){
+				style.styleSheet.cssText = css;
+			} else {
+				style.appendChild(document.createTextNode(css));
+			}
+			head.appendChild(style);
+			sessionStorage.mode = "night";
+		}
+
+	});
+
+
 
 	$('tr').click(function(){
 		if($(this).find('a').length > 0) {
