@@ -30,7 +30,6 @@ $(function () {
                 window.location.href = './wire2.html';
 
             }, function (err) {
-                console.log(err);
                 // pop up error
                alert(err);
             });
