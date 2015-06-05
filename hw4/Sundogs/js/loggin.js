@@ -30,8 +30,8 @@ $(function () {
                 window.location.href = './wire2.html';
 
             }, function (err) {
-                console.log(err);
                 // pop up error
+                console.log(err);
                alert("Please using tomcat to run the web project.");
             });
     }
