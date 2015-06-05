@@ -992,7 +992,7 @@ select {
 
   font-family: Arial;
   color: #ffffff;
-  font-size: 2px;
+  font-size: 12px;
   background: #1C3A3F;
   padding: 10px 20px 10px 20px;
   margin-top: 10px;
@@ -1005,6 +1005,24 @@ select {
   text-decoration: none;
   border: 1px solid #68CEDE
 }
+
+/* * * * * * * * * * * * * * * *
+ *                             *
+ *           profile           *
+ *                             *
+ * * * * * * * * * * * * * * * */
+#change_password {
+    background: #397C86;
+    border: 1px solid #151515;
+    color: white;
+    text-decoration: none;
+    width: 275px;
+}
+
+
+
+
+
 /* * * * * * * * * * * * * * * *
  *                             *
  *           EDIT              *

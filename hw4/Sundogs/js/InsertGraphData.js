@@ -15,7 +15,7 @@ $(window).load(function() {
 	}
 
 	var goldAPI = "https://www.quandl.com/api/v1/datasets/WSJ/AU_EIB.json?auth_token=5s-ML76zo41KMnmSPPf_&trim_start=2015-02-27";
-	var silverAPI = "https://www.quandl.com/api/v1/datasets/WSJ/AG_EIB.json?auth_token=5s-ML76zo41KMnmSPPf_&trim_start=2015-02-27"
+	var silverAPI = "https://www.quandl.com/api/v1/datasets/WSJ/AG_EIB.json?auth_token=5s-ML76zo41KMnmSPPf_&trim_start=2015-02-27";
 	var platAPI = "https://www.quandl.com/api/v1/datasets/WSJ/PL_EIB.json?auth_token=5s-ML76zo41KMnmSPPf_&trim_start=2015-02-27";
 
 	var gJson = getData(goldAPI);

@@ -2,7 +2,6 @@
  * Created by Mingxuan on 2015/5/27.
  */
 $(document).ready(function(){
-
     var metal = sessionStorage.metal;
     $("#new_metal").val(""+metal+"");
 
