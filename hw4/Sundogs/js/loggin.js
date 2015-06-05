@@ -32,7 +32,7 @@ $(function () {
             }, function (err) {
                 console.log(err);
                 // pop up error
-               alert("Please using localhost to run the web project.");
+               alert(err);
             });
     }
 
