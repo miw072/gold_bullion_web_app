@@ -99,6 +99,8 @@ function loadFooter(){
 
 $(window).load(function() {
 
+
+
 	var path = window.location.pathname;
 	var parameter= window.location.search;
 	var page_name = path.split("/").pop();
@@ -221,6 +223,14 @@ $(window).load(function() {
 	 $('.icon-spinner2').click(function(){
 	 	location.reload();	
 	 });
+
+
+
+	$('.icon-cog').click(function(){
+		window.location.href = "./profile.html";
+	});
+
+
 
 	$('tr').click(function(){
 		if($(this).find('a').length > 0) {
