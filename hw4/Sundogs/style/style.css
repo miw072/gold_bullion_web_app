@@ -1019,6 +1019,14 @@ select {
     width: 275px;
 }
 
+#invert_color{
+    background:#397C86;
+    border: 1px solid #151515;
+    color: white;
+    width: 275px;
+    padding: 10px;
+}
+
 
 
 
